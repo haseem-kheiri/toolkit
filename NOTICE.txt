@@ -1,0 +1,19 @@
+Platform Toolkit
+================
+
+Copyright (c) 2020–2025 Haseem Kheiri
+
+This project provides foundational building blocks for distributed systems,
+including clustering, codecs, file abstractions, telemetry, auditing, and
+gateway components.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at:
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Author:
+- Haseem Kheiri
+
+Started: 2020
