@@ -1,0 +1,25 @@
+# .github/workflows/ci.yml
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up JavaHo
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Build platform
+        run: mvn -f pom.xml -B clean verify -DskipTests 
