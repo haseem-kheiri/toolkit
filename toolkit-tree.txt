@@ -1,0 +1,2212 @@
+Folder PATH listing
+Volume serial number is 1AC7-1083
+D:.
+¦   .gitignore
+¦   .project
+¦   LICENSE
+¦   NOTICE.txt
+¦   pom.xml
+¦   README.md
+¦   run-act.sh
+¦   toolkit-tree.txt
+¦   
++--.github
+¦   +--workflows
+¦           ci.yml
+¦           
++--.settings
+¦       org.eclipse.core.resources.prefs
+¦       org.eclipse.m2e.core.prefs
+¦       
++--act-custom-image
+¦       build-act-image.sh
+¦       Dockerfile
+¦       
++--docker-compose
+¦       docker-compose.yml
+¦       run.sh
+¦       
++--libraries
+¦   ¦   .project
+¦   ¦   pom.xml
+¦   ¦   
+¦   +--.settings
+¦   ¦       org.eclipse.core.resources.prefs
+¦   ¦       org.eclipse.m2e.core.prefs
+¦   ¦       
+¦   +--cluster-core
+¦   ¦   ¦   .checkstyle
+¦   ¦   ¦   .classpath
+¦   ¦   ¦   .factorypath
+¦   ¦   ¦   .project
+¦   ¦   ¦   pom.xml
+¦   ¦   ¦   README.md
+¦   ¦   ¦   
+¦   ¦   +--.settings
+¦   ¦   ¦       org.eclipse.core.resources.prefs
+¦   ¦   ¦       org.eclipse.jdt.apt.core.prefs
+¦   ¦   ¦       org.eclipse.jdt.core.prefs
+¦   ¦   ¦       org.eclipse.m2e.core.prefs
+¦   ¦   ¦       org.springframework.ide.eclipse.prefs
+¦   ¦   ¦       
+¦   ¦   +--src
+¦   ¦   ¦   +--main
+¦   ¦   ¦   ¦   +--java
+¦   ¦   ¦   ¦   ¦   +--com
+¦   ¦   ¦   ¦   ¦       +--tsh
+¦   ¦   ¦   ¦   ¦           +--toolkit
+¦   ¦   ¦   ¦   ¦               +--cluster
+¦   ¦   ¦   ¦   ¦                   +--impl
+¦   ¦   ¦   ¦   ¦                   ¦       Cluster.java
+¦   ¦   ¦   ¦   ¦                   ¦       ClusterNodeState.java
+¦   ¦   ¦   ¦   ¦                   ¦       ClusterProperties.java
+¦   ¦   ¦   ¦   ¦                   ¦       ClusterRepositoryProperties.java
+¦   ¦   ¦   ¦   ¦                   ¦       
+¦   ¦   ¦   ¦   ¦                   +--repository
+¦   ¦   ¦   ¦   ¦                       ¦   ClusterRepository.java
+¦   ¦   ¦   ¦   ¦                       ¦   
+¦   ¦   ¦   ¦   ¦                       +--impl
+¦   ¦   ¦   ¦   ¦                               EtcdClusterRepository.java
+¦   ¦   ¦   ¦   ¦                               
+¦   ¦   ¦   ¦   +--resources
+¦   ¦   ¦   +--test
+¦   ¦   ¦       +--java
+¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦       ¦       +--tsh
+¦   ¦   ¦       ¦           +--toolkit
+¦   ¦   ¦       ¦               +--cluster
+¦   ¦   ¦       ¦                   +--impl
+¦   ¦   ¦       ¦                           ClusterTest.java
+¦   ¦   ¦       ¦                           NodeIdentityTest.java
+¦   ¦   ¦       ¦                           
+¦   ¦   ¦       +--resources
+¦   ¦   +--target
+¦   ¦       ¦   checkstyle-cachefile
+¦   ¦       ¦   checkstyle-checker.xml
+¦   ¦       ¦   checkstyle-result.xml
+¦   ¦       ¦   cluster-core-0.0.1-SNAPSHOT-javadoc.jar
+¦   ¦       ¦   cluster-core-0.0.1-SNAPSHOT-sources.jar
+¦   ¦       ¦   cluster-core-0.0.1-SNAPSHOT.jar
+¦   ¦       ¦   jacoco.exec
+¦   ¦       ¦   maven-javadoc-plugin-stale-data.txt
+¦   ¦       ¦   
+¦   ¦       +--apidocs
+¦   ¦       ¦   ¦   allclasses-index.html
+¦   ¦       ¦   ¦   allpackages-index.html
+¦   ¦       ¦   ¦   copy.svg
+¦   ¦       ¦   ¦   element-list
+¦   ¦       ¦   ¦   help-doc.html
+¦   ¦       ¦   ¦   index-all.html
+¦   ¦       ¦   ¦   index.html
+¦   ¦       ¦   ¦   link.svg
+¦   ¦       ¦   ¦   member-search-index.js
+¦   ¦       ¦   ¦   module-search-index.js
+¦   ¦       ¦   ¦   overview-summary.html
+¦   ¦       ¦   ¦   overview-tree.html
+¦   ¦       ¦   ¦   package-search-index.js
+¦   ¦       ¦   ¦   script.js
+¦   ¦       ¦   ¦   search-page.js
+¦   ¦       ¦   ¦   search.html
+¦   ¦       ¦   ¦   search.js
+¦   ¦       ¦   ¦   stylesheet.css
+¦   ¦       ¦   ¦   tag-search-index.js
+¦   ¦       ¦   ¦   type-search-index.js
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +--com
+¦   ¦       ¦   ¦   +--tsh
+¦   ¦       ¦   ¦       +--toolkit
+¦   ¦       ¦   ¦           +--cluster
+¦   ¦       ¦   ¦               +--impl
+¦   ¦       ¦   ¦               ¦   ¦   Cluster.ClusterNode.html
+¦   ¦       ¦   ¦               ¦   ¦   Cluster.ClusterNodeSnapshot.html
+¦   ¦       ¦   ¦               ¦   ¦   Cluster.html
+¦   ¦       ¦   ¦               ¦   ¦   Cluster.NodeHeartbeat.html
+¦   ¦       ¦   ¦               ¦   ¦   Cluster.NodeIdentity.html
+¦   ¦       ¦   ¦               ¦   ¦   Cluster.NodeState.html
+¦   ¦       ¦   ¦               ¦   ¦   Cluster.NodeType.html
+¦   ¦       ¦   ¦               ¦   ¦   ClusterNodeState.html
+¦   ¦       ¦   ¦               ¦   ¦   ClusterProperties.html
+¦   ¦       ¦   ¦               ¦   ¦   ClusterRepositoryProperties.html
+¦   ¦       ¦   ¦               ¦   ¦   package-summary.html
+¦   ¦       ¦   ¦               ¦   ¦   package-tree.html
+¦   ¦       ¦   ¦               ¦   ¦   package-use.html
+¦   ¦       ¦   ¦               ¦   ¦   
+¦   ¦       ¦   ¦               ¦   +--class-use
+¦   ¦       ¦   ¦               ¦           Cluster.ClusterNode.html
+¦   ¦       ¦   ¦               ¦           Cluster.ClusterNodeSnapshot.html
+¦   ¦       ¦   ¦               ¦           Cluster.html
+¦   ¦       ¦   ¦               ¦           Cluster.NodeHeartbeat.html
+¦   ¦       ¦   ¦               ¦           Cluster.NodeIdentity.html
+¦   ¦       ¦   ¦               ¦           Cluster.NodeState.html
+¦   ¦       ¦   ¦               ¦           Cluster.NodeType.html
+¦   ¦       ¦   ¦               ¦           ClusterNodeState.html
+¦   ¦       ¦   ¦               ¦           ClusterProperties.html
+¦   ¦       ¦   ¦               ¦           ClusterRepositoryProperties.html
+¦   ¦       ¦   ¦               ¦           
+¦   ¦       ¦   ¦               +--repository
+¦   ¦       ¦   ¦                   ¦   ClusterRepository.html
+¦   ¦       ¦   ¦                   ¦   package-summary.html
+¦   ¦       ¦   ¦                   ¦   package-tree.html
+¦   ¦       ¦   ¦                   ¦   package-use.html
+¦   ¦       ¦   ¦                   ¦   
+¦   ¦       ¦   ¦                   +--class-use
+¦   ¦       ¦   ¦                   ¦       ClusterRepository.html
+¦   ¦       ¦   ¦                   ¦       
+¦   ¦       ¦   ¦                   +--impl
+¦   ¦       ¦   ¦                       ¦   EtcdClusterRepository.html
+¦   ¦       ¦   ¦                       ¦   package-summary.html
+¦   ¦       ¦   ¦                       ¦   package-tree.html
+¦   ¦       ¦   ¦                       ¦   package-use.html
+¦   ¦       ¦   ¦                       ¦   
+¦   ¦       ¦   ¦                       +--class-use
+¦   ¦       ¦   ¦                               EtcdClusterRepository.html
+¦   ¦       ¦   ¦                               
+¦   ¦       ¦   +--legal
+¦   ¦       ¦   ¦       ADDITIONAL_LICENSE_INFO
+¦   ¦       ¦   ¦       ASSEMBLY_EXCEPTION
+¦   ¦       ¦   ¦       jquery.md
+¦   ¦       ¦   ¦       jqueryUI.md
+¦   ¦       ¦   ¦       LICENSE
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +--resources
+¦   ¦       ¦   ¦       glass.png
+¦   ¦       ¦   ¦       x.png
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +--script-dir
+¦   ¦       ¦           jquery-3.6.1.min.js
+¦   ¦       ¦           jquery-ui.min.css
+¦   ¦       ¦           jquery-ui.min.js
+¦   ¦       ¦           
+¦   ¦       +--classes
+¦   ¦       ¦   +--com
+¦   ¦       ¦       +--tsh
+¦   ¦       ¦           +--toolkit
+¦   ¦       ¦               +--cluster
+¦   ¦       ¦                   +--impl
+¦   ¦       ¦                   ¦       Cluster$ClusterNode.class
+¦   ¦       ¦                   ¦       Cluster$ClusterNodeSnapshot.class
+¦   ¦       ¦                   ¦       Cluster$NodeHeartbeat.class
+¦   ¦       ¦                   ¦       Cluster$NodeIdentity.class
+¦   ¦       ¦                   ¦       Cluster$NodeState.class
+¦   ¦       ¦                   ¦       Cluster$NodeType.class
+¦   ¦       ¦                   ¦       Cluster.class
+¦   ¦       ¦                   ¦       ClusterNodeState.class
+¦   ¦       ¦                   ¦       ClusterProperties.class
+¦   ¦       ¦                   ¦       ClusterRepositoryProperties.class
+¦   ¦       ¦                   ¦       
+¦   ¦       ¦                   +--repository
+¦   ¦       ¦                       ¦   ClusterRepository.class
+¦   ¦       ¦                       ¦   
+¦   ¦       ¦                       +--impl
+¦   ¦       ¦                               EtcdClusterRepository$1.class
+¦   ¦       ¦                               EtcdClusterRepository$2.class
+¦   ¦       ¦                               EtcdClusterRepository.class
+¦   ¦       ¦                               
+¦   ¦       +--generated-sources
+¦   ¦       ¦   +--annotations
+¦   ¦       +--generated-test-sources
+¦   ¦       ¦   +--test-annotations
+¦   ¦       +--javadoc-bundle-options
+¦   ¦       ¦       javadoc-options-javadoc-resources.xml
+¦   ¦       ¦       
+¦   ¦       +--maven-archiver
+¦   ¦       ¦       pom.properties
+¦   ¦       ¦       
+¦   ¦       +--maven-status
+¦   ¦       ¦   +--maven-compiler-plugin
+¦   ¦       ¦       +--compile
+¦   ¦       ¦       ¦   +--default-compile
+¦   ¦       ¦       ¦           createdFiles.lst
+¦   ¦       ¦       ¦           inputFiles.lst
+¦   ¦       ¦       ¦           
+¦   ¦       ¦       +--testCompile
+¦   ¦       ¦           +--default-testCompile
+¦   ¦       ¦                   createdFiles.lst
+¦   ¦       ¦                   inputFiles.lst
+¦   ¦       ¦                   
+¦   ¦       +--site
+¦   ¦       ¦   +--jacoco
+¦   ¦       ¦       ¦   index.html
+¦   ¦       ¦       ¦   jacoco-sessions.html
+¦   ¦       ¦       ¦   jacoco.csv
+¦   ¦       ¦       ¦   jacoco.xml
+¦   ¦       ¦       ¦   
+¦   ¦       ¦       +--com.tsh.toolkit.cluster.impl
+¦   ¦       ¦       ¦       Cluster$ClusterNode.html
+¦   ¦       ¦       ¦       Cluster$ClusterNodeSnapshot.html
+¦   ¦       ¦       ¦       Cluster$NodeHeartbeat.html
+¦   ¦       ¦       ¦       Cluster$NodeIdentity.html
+¦   ¦       ¦       ¦       Cluster$NodeState.html
+¦   ¦       ¦       ¦       Cluster$NodeType.html
+¦   ¦       ¦       ¦       Cluster.html
+¦   ¦       ¦       ¦       Cluster.java.html
+¦   ¦       ¦       ¦       ClusterNodeState.html
+¦   ¦       ¦       ¦       ClusterNodeState.java.html
+¦   ¦       ¦       ¦       ClusterProperties.html
+¦   ¦       ¦       ¦       ClusterProperties.java.html
+¦   ¦       ¦       ¦       ClusterRepositoryProperties.html
+¦   ¦       ¦       ¦       ClusterRepositoryProperties.java.html
+¦   ¦       ¦       ¦       index.html
+¦   ¦       ¦       ¦       index.source.html
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +--com.tsh.toolkit.cluster.repository.impl
+¦   ¦       ¦       ¦       EtcdClusterRepository$1.html
+¦   ¦       ¦       ¦       EtcdClusterRepository$2.html
+¦   ¦       ¦       ¦       EtcdClusterRepository.html
+¦   ¦       ¦       ¦       EtcdClusterRepository.java.html
+¦   ¦       ¦       ¦       index.html
+¦   ¦       ¦       ¦       index.source.html
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +--jacoco-resources
+¦   ¦       ¦               branchfc.gif
+¦   ¦       ¦               branchnc.gif
+¦   ¦       ¦               branchpc.gif
+¦   ¦       ¦               bundle.gif
+¦   ¦       ¦               class.gif
+¦   ¦       ¦               down.gif
+¦   ¦       ¦               greenbar.gif
+¦   ¦       ¦               group.gif
+¦   ¦       ¦               method.gif
+¦   ¦       ¦               package.gif
+¦   ¦       ¦               prettify.css
+¦   ¦       ¦               prettify.js
+¦   ¦       ¦               redbar.gif
+¦   ¦       ¦               report.css
+¦   ¦       ¦               report.gif
+¦   ¦       ¦               session.gif
+¦   ¦       ¦               sort.gif
+¦   ¦       ¦               sort.js
+¦   ¦       ¦               source.gif
+¦   ¦       ¦               up.gif
+¦   ¦       ¦               
+¦   ¦       +--surefire-reports
+¦   ¦       ¦       2025-12-15T10-12-37_071.dumpstream
+¦   ¦       ¦       com.tsh.toolkit.cluster.impl.ClusterTest.txt
+¦   ¦       ¦       com.tsh.toolkit.cluster.impl.NodeIdentityTest.txt
+¦   ¦       ¦       TEST-com.tsh.toolkit.cluster.impl.ClusterTest.xml
+¦   ¦       ¦       TEST-com.tsh.toolkit.cluster.impl.NodeIdentityTest.xml
+¦   ¦       ¦       
+¦   ¦       +--test-classes
+¦   ¦           +--com
+¦   ¦               +--tsh
+¦   ¦                   +--toolkit
+¦   ¦                       +--cluster
+¦   ¦                           +--impl
+¦   ¦                                   ClusterTest$BadRepository.class
+¦   ¦                                   ClusterTest$TestCluster.class
+¦   ¦                                   ClusterTest$TestClusterNodeState.class
+¦   ¦                                   ClusterTest$TestConfig.class
+¦   ¦                                   ClusterTest.class
+¦   ¦                                   NodeIdentityTest.class
+¦   ¦                                   
+¦   +--codec-core-libraries
+¦   ¦   ¦   .project
+¦   ¦   ¦   pom.xml
+¦   ¦   ¦   README.md
+¦   ¦   ¦   
+¦   ¦   +--.settings
+¦   ¦   ¦       org.eclipse.core.resources.prefs
+¦   ¦   ¦       org.eclipse.m2e.core.prefs
+¦   ¦   ¦       
+¦   ¦   +--codec-core
+¦   ¦   ¦   ¦   .checkstyle
+¦   ¦   ¦   ¦   .classpath
+¦   ¦   ¦   ¦   .factorypath
+¦   ¦   ¦   ¦   .project
+¦   ¦   ¦   ¦   pom.xml
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +--.settings
+¦   ¦   ¦   ¦       org.eclipse.core.resources.prefs
+¦   ¦   ¦   ¦       org.eclipse.jdt.apt.core.prefs
+¦   ¦   ¦   ¦       org.eclipse.jdt.core.prefs
+¦   ¦   ¦   ¦       org.eclipse.m2e.core.prefs
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +--src
+¦   ¦   ¦   ¦   +--main
+¦   ¦   ¦   ¦   ¦   +--java
+¦   ¦   ¦   ¦   ¦   ¦   +--com
+¦   ¦   ¦   ¦   ¦   ¦       +--tsh
+¦   ¦   ¦   ¦   ¦   ¦           +--toolkit
+¦   ¦   ¦   ¦   ¦   ¦               +--codec
+¦   ¦   ¦   ¦   ¦   ¦                       Codec.java
+¦   ¦   ¦   ¦   ¦   ¦                       CodecException.java
+¦   ¦   ¦   ¦   ¦   ¦                       ObjectType.java
+¦   ¦   ¦   ¦   ¦   ¦                       
+¦   ¦   ¦   ¦   ¦   +--resources
+¦   ¦   ¦   ¦   +--test
+¦   ¦   ¦   ¦       +--java
+¦   ¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦   ¦       ¦       +--tsh
+¦   ¦   ¦   ¦       ¦           +--toolkit
+¦   ¦   ¦   ¦       ¦               +--codec
+¦   ¦   ¦   ¦       ¦                       CodecExceptionTest.java
+¦   ¦   ¦   ¦       ¦                       ObjectTypeTest.java
+¦   ¦   ¦   ¦       ¦                       
+¦   ¦   ¦   ¦       +--resources
+¦   ¦   ¦   +--target
+¦   ¦   ¦       ¦   checkstyle-cachefile
+¦   ¦   ¦       ¦   checkstyle-checker.xml
+¦   ¦   ¦       ¦   checkstyle-result.xml
+¦   ¦   ¦       ¦   codec-core-0.0.1-SNAPSHOT-javadoc.jar
+¦   ¦   ¦       ¦   codec-core-0.0.1-SNAPSHOT-sources.jar
+¦   ¦   ¦       ¦   codec-core-0.0.1-SNAPSHOT.jar
+¦   ¦   ¦       ¦   jacoco.exec
+¦   ¦   ¦       ¦   maven-javadoc-plugin-stale-data.txt
+¦   ¦   ¦       ¦   
+¦   ¦   ¦       +--apidocs
+¦   ¦   ¦       ¦   ¦   allclasses-index.html
+¦   ¦   ¦       ¦   ¦   allpackages-index.html
+¦   ¦   ¦       ¦   ¦   copy.svg
+¦   ¦   ¦       ¦   ¦   element-list
+¦   ¦   ¦       ¦   ¦   help-doc.html
+¦   ¦   ¦       ¦   ¦   index-all.html
+¦   ¦   ¦       ¦   ¦   index.html
+¦   ¦   ¦       ¦   ¦   link.svg
+¦   ¦   ¦       ¦   ¦   member-search-index.js
+¦   ¦   ¦       ¦   ¦   module-search-index.js
+¦   ¦   ¦       ¦   ¦   overview-tree.html
+¦   ¦   ¦       ¦   ¦   package-search-index.js
+¦   ¦   ¦       ¦   ¦   script.js
+¦   ¦   ¦       ¦   ¦   search-page.js
+¦   ¦   ¦       ¦   ¦   search.html
+¦   ¦   ¦       ¦   ¦   search.js
+¦   ¦   ¦       ¦   ¦   serialized-form.html
+¦   ¦   ¦       ¦   ¦   stylesheet.css
+¦   ¦   ¦       ¦   ¦   tag-search-index.js
+¦   ¦   ¦       ¦   ¦   type-search-index.js
+¦   ¦   ¦       ¦   ¦   
+¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦       ¦   ¦   +--tsh
+¦   ¦   ¦       ¦   ¦       +--toolkit
+¦   ¦   ¦       ¦   ¦           +--codec
+¦   ¦   ¦       ¦   ¦               ¦   Codec.html
+¦   ¦   ¦       ¦   ¦               ¦   CodecException.html
+¦   ¦   ¦       ¦   ¦               ¦   ObjectType.html
+¦   ¦   ¦       ¦   ¦               ¦   package-summary.html
+¦   ¦   ¦       ¦   ¦               ¦   package-tree.html
+¦   ¦   ¦       ¦   ¦               ¦   package-use.html
+¦   ¦   ¦       ¦   ¦               ¦   
+¦   ¦   ¦       ¦   ¦               +--class-use
+¦   ¦   ¦       ¦   ¦                       Codec.html
+¦   ¦   ¦       ¦   ¦                       CodecException.html
+¦   ¦   ¦       ¦   ¦                       ObjectType.html
+¦   ¦   ¦       ¦   ¦                       
+¦   ¦   ¦       ¦   +--legal
+¦   ¦   ¦       ¦   ¦       ADDITIONAL_LICENSE_INFO
+¦   ¦   ¦       ¦   ¦       ASSEMBLY_EXCEPTION
+¦   ¦   ¦       ¦   ¦       jquery.md
+¦   ¦   ¦       ¦   ¦       jqueryUI.md
+¦   ¦   ¦       ¦   ¦       LICENSE
+¦   ¦   ¦       ¦   ¦       
+¦   ¦   ¦       ¦   +--resources
+¦   ¦   ¦       ¦   ¦       glass.png
+¦   ¦   ¦       ¦   ¦       x.png
+¦   ¦   ¦       ¦   ¦       
+¦   ¦   ¦       ¦   +--script-dir
+¦   ¦   ¦       ¦           jquery-3.6.1.min.js
+¦   ¦   ¦       ¦           jquery-ui.min.css
+¦   ¦   ¦       ¦           jquery-ui.min.js
+¦   ¦   ¦       ¦           
+¦   ¦   ¦       +--classes
+¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦       ¦       +--tsh
+¦   ¦   ¦       ¦           +--toolkit
+¦   ¦   ¦       ¦               +--codec
+¦   ¦   ¦       ¦                       Codec.class
+¦   ¦   ¦       ¦                       CodecException.class
+¦   ¦   ¦       ¦                       ObjectType.class
+¦   ¦   ¦       ¦                       
+¦   ¦   ¦       +--generated-sources
+¦   ¦   ¦       ¦   +--annotations
+¦   ¦   ¦       +--generated-test-sources
+¦   ¦   ¦       ¦   +--test-annotations
+¦   ¦   ¦       +--javadoc-bundle-options
+¦   ¦   ¦       ¦       javadoc-options-javadoc-resources.xml
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--maven-archiver
+¦   ¦   ¦       ¦       pom.properties
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--maven-status
+¦   ¦   ¦       ¦   +--maven-compiler-plugin
+¦   ¦   ¦       ¦       +--compile
+¦   ¦   ¦       ¦       ¦   +--default-compile
+¦   ¦   ¦       ¦       ¦           createdFiles.lst
+¦   ¦   ¦       ¦       ¦           inputFiles.lst
+¦   ¦   ¦       ¦       ¦           
+¦   ¦   ¦       ¦       +--testCompile
+¦   ¦   ¦       ¦           +--default-testCompile
+¦   ¦   ¦       ¦                   createdFiles.lst
+¦   ¦   ¦       ¦                   inputFiles.lst
+¦   ¦   ¦       ¦                   
+¦   ¦   ¦       +--site
+¦   ¦   ¦       ¦   +--jacoco
+¦   ¦   ¦       ¦       ¦   index.html
+¦   ¦   ¦       ¦       ¦   jacoco-sessions.html
+¦   ¦   ¦       ¦       ¦   jacoco.csv
+¦   ¦   ¦       ¦       ¦   jacoco.xml
+¦   ¦   ¦       ¦       ¦   
+¦   ¦   ¦       ¦       +--com.tsh.toolkit.codec
+¦   ¦   ¦       ¦       ¦       CodecException.html
+¦   ¦   ¦       ¦       ¦       CodecException.java.html
+¦   ¦   ¦       ¦       ¦       index.html
+¦   ¦   ¦       ¦       ¦       index.source.html
+¦   ¦   ¦       ¦       ¦       ObjectType.html
+¦   ¦   ¦       ¦       ¦       ObjectType.java.html
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +--jacoco-resources
+¦   ¦   ¦       ¦               branchfc.gif
+¦   ¦   ¦       ¦               branchnc.gif
+¦   ¦   ¦       ¦               branchpc.gif
+¦   ¦   ¦       ¦               bundle.gif
+¦   ¦   ¦       ¦               class.gif
+¦   ¦   ¦       ¦               down.gif
+¦   ¦   ¦       ¦               greenbar.gif
+¦   ¦   ¦       ¦               group.gif
+¦   ¦   ¦       ¦               method.gif
+¦   ¦   ¦       ¦               package.gif
+¦   ¦   ¦       ¦               prettify.css
+¦   ¦   ¦       ¦               prettify.js
+¦   ¦   ¦       ¦               redbar.gif
+¦   ¦   ¦       ¦               report.css
+¦   ¦   ¦       ¦               report.gif
+¦   ¦   ¦       ¦               session.gif
+¦   ¦   ¦       ¦               sort.gif
+¦   ¦   ¦       ¦               sort.js
+¦   ¦   ¦       ¦               source.gif
+¦   ¦   ¦       ¦               up.gif
+¦   ¦   ¦       ¦               
+¦   ¦   ¦       +--surefire-reports
+¦   ¦   ¦       ¦       2025-12-15T10-12-37_071.dumpstream
+¦   ¦   ¦       ¦       com.tsh.toolkit.codec.CodecExceptionTest.txt
+¦   ¦   ¦       ¦       com.tsh.toolkit.codec.ObjectTypeTest.txt
+¦   ¦   ¦       ¦       TEST-com.tsh.toolkit.codec.CodecExceptionTest.xml
+¦   ¦   ¦       ¦       TEST-com.tsh.toolkit.codec.ObjectTypeTest.xml
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--test-classes
+¦   ¦   ¦           +--com
+¦   ¦   ¦               +--tsh
+¦   ¦   ¦                   +--toolkit
+¦   ¦   ¦                       +--codec
+¦   ¦   ¦                               CodecExceptionTest.class
+¦   ¦   ¦                               ObjectTypeTest$1.class
+¦   ¦   ¦                               ObjectTypeTest$2.class
+¦   ¦   ¦                               ObjectTypeTest$3.class
+¦   ¦   ¦                               ObjectTypeTest$4.class
+¦   ¦   ¦                               ObjectTypeTest.class
+¦   ¦   ¦                               
+¦   ¦   +--codec-json
+¦   ¦   ¦   ¦   .checkstyle
+¦   ¦   ¦   ¦   .classpath
+¦   ¦   ¦   ¦   .factorypath
+¦   ¦   ¦   ¦   .project
+¦   ¦   ¦   ¦   pom.xml
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +--.settings
+¦   ¦   ¦   ¦       org.eclipse.core.resources.prefs
+¦   ¦   ¦   ¦       org.eclipse.jdt.apt.core.prefs
+¦   ¦   ¦   ¦       org.eclipse.jdt.core.prefs
+¦   ¦   ¦   ¦       org.eclipse.m2e.core.prefs
+¦   ¦   ¦   ¦       org.springframework.ide.eclipse.prefs
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +--src
+¦   ¦   ¦   ¦   +--main
+¦   ¦   ¦   ¦   ¦   +--java
+¦   ¦   ¦   ¦   ¦   ¦   +--com
+¦   ¦   ¦   ¦   ¦   ¦       +--tsh
+¦   ¦   ¦   ¦   ¦   ¦           +--toolkit
+¦   ¦   ¦   ¦   ¦   ¦               +--codec
+¦   ¦   ¦   ¦   ¦   ¦                   +--json
+¦   ¦   ¦   ¦   ¦   ¦                       +--autoconfig
+¦   ¦   ¦   ¦   ¦   ¦                       ¦       JsonCodecConfiguration.java
+¦   ¦   ¦   ¦   ¦   ¦                       ¦       JsonConfiguration.java
+¦   ¦   ¦   ¦   ¦   ¦                       ¦       
+¦   ¦   ¦   ¦   ¦   ¦                       +--impl
+¦   ¦   ¦   ¦   ¦   ¦                               JsonCodec.java
+¦   ¦   ¦   ¦   ¦   ¦                               JsonUtils.java
+¦   ¦   ¦   ¦   ¦   ¦                               
+¦   ¦   ¦   ¦   ¦   +--resources
+¦   ¦   ¦   ¦   ¦       +--META-INF
+¦   ¦   ¦   ¦   ¦           +--spring
+¦   ¦   ¦   ¦   ¦                   org.springframework.boot.autoconfigure.AutoConfiguration.imports
+¦   ¦   ¦   ¦   ¦                   
+¦   ¦   ¦   ¦   +--test
+¦   ¦   ¦   ¦       +--java
+¦   ¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦   ¦       ¦       +--tsh
+¦   ¦   ¦   ¦       ¦           +--toolkit
+¦   ¦   ¦   ¦       ¦               +--codec
+¦   ¦   ¦   ¦       ¦                   +--json
+¦   ¦   ¦   ¦       ¦                       +--impl
+¦   ¦   ¦   ¦       ¦                               JsonCodecTest.java
+¦   ¦   ¦   ¦       ¦                               JsonUtilsTest.java
+¦   ¦   ¦   ¦       ¦                               
+¦   ¦   ¦   ¦       +--resources
+¦   ¦   ¦   +--target
+¦   ¦   ¦       ¦   checkstyle-cachefile
+¦   ¦   ¦       ¦   checkstyle-checker.xml
+¦   ¦   ¦       ¦   checkstyle-result.xml
+¦   ¦   ¦       ¦   codec-json-0.0.1-SNAPSHOT-javadoc.jar
+¦   ¦   ¦       ¦   codec-json-0.0.1-SNAPSHOT-sources.jar
+¦   ¦   ¦       ¦   codec-json-0.0.1-SNAPSHOT.jar
+¦   ¦   ¦       ¦   jacoco.exec
+¦   ¦   ¦       ¦   maven-javadoc-plugin-stale-data.txt
+¦   ¦   ¦       ¦   
+¦   ¦   ¦       +--apidocs
+¦   ¦   ¦       ¦   ¦   allclasses-index.html
+¦   ¦   ¦       ¦   ¦   allpackages-index.html
+¦   ¦   ¦       ¦   ¦   copy.svg
+¦   ¦   ¦       ¦   ¦   element-list
+¦   ¦   ¦       ¦   ¦   help-doc.html
+¦   ¦   ¦       ¦   ¦   index-all.html
+¦   ¦   ¦       ¦   ¦   index.html
+¦   ¦   ¦       ¦   ¦   link.svg
+¦   ¦   ¦       ¦   ¦   member-search-index.js
+¦   ¦   ¦       ¦   ¦   module-search-index.js
+¦   ¦   ¦       ¦   ¦   overview-summary.html
+¦   ¦   ¦       ¦   ¦   overview-tree.html
+¦   ¦   ¦       ¦   ¦   package-search-index.js
+¦   ¦   ¦       ¦   ¦   script.js
+¦   ¦   ¦       ¦   ¦   search-page.js
+¦   ¦   ¦       ¦   ¦   search.html
+¦   ¦   ¦       ¦   ¦   search.js
+¦   ¦   ¦       ¦   ¦   stylesheet.css
+¦   ¦   ¦       ¦   ¦   tag-search-index.js
+¦   ¦   ¦       ¦   ¦   type-search-index.js
+¦   ¦   ¦       ¦   ¦   
+¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦       ¦   ¦   +--tsh
+¦   ¦   ¦       ¦   ¦       +--toolkit
+¦   ¦   ¦       ¦   ¦           +--codec
+¦   ¦   ¦       ¦   ¦               +--json
+¦   ¦   ¦       ¦   ¦                   +--autoconfig
+¦   ¦   ¦       ¦   ¦                   ¦   ¦   JsonCodecConfiguration.html
+¦   ¦   ¦       ¦   ¦                   ¦   ¦   JsonConfiguration.html
+¦   ¦   ¦       ¦   ¦                   ¦   ¦   package-summary.html
+¦   ¦   ¦       ¦   ¦                   ¦   ¦   package-tree.html
+¦   ¦   ¦       ¦   ¦                   ¦   ¦   package-use.html
+¦   ¦   ¦       ¦   ¦                   ¦   ¦   
+¦   ¦   ¦       ¦   ¦                   ¦   +--class-use
+¦   ¦   ¦       ¦   ¦                   ¦           JsonCodecConfiguration.html
+¦   ¦   ¦       ¦   ¦                   ¦           JsonConfiguration.html
+¦   ¦   ¦       ¦   ¦                   ¦           
+¦   ¦   ¦       ¦   ¦                   +--impl
+¦   ¦   ¦       ¦   ¦                       ¦   JsonCodec.html
+¦   ¦   ¦       ¦   ¦                       ¦   JsonCodec.JsonMapperSupplier.html
+¦   ¦   ¦       ¦   ¦                       ¦   JsonUtils.html
+¦   ¦   ¦       ¦   ¦                       ¦   JsonUtils.JsonMapper.html
+¦   ¦   ¦       ¦   ¦                       ¦   package-summary.html
+¦   ¦   ¦       ¦   ¦                       ¦   package-tree.html
+¦   ¦   ¦       ¦   ¦                       ¦   package-use.html
+¦   ¦   ¦       ¦   ¦                       ¦   
+¦   ¦   ¦       ¦   ¦                       +--class-use
+¦   ¦   ¦       ¦   ¦                               JsonCodec.html
+¦   ¦   ¦       ¦   ¦                               JsonCodec.JsonMapperSupplier.html
+¦   ¦   ¦       ¦   ¦                               JsonUtils.html
+¦   ¦   ¦       ¦   ¦                               JsonUtils.JsonMapper.html
+¦   ¦   ¦       ¦   ¦                               
+¦   ¦   ¦       ¦   +--legal
+¦   ¦   ¦       ¦   ¦       ADDITIONAL_LICENSE_INFO
+¦   ¦   ¦       ¦   ¦       ASSEMBLY_EXCEPTION
+¦   ¦   ¦       ¦   ¦       jquery.md
+¦   ¦   ¦       ¦   ¦       jqueryUI.md
+¦   ¦   ¦       ¦   ¦       LICENSE
+¦   ¦   ¦       ¦   ¦       
+¦   ¦   ¦       ¦   +--resources
+¦   ¦   ¦       ¦   ¦       glass.png
+¦   ¦   ¦       ¦   ¦       x.png
+¦   ¦   ¦       ¦   ¦       
+¦   ¦   ¦       ¦   +--script-dir
+¦   ¦   ¦       ¦           jquery-3.6.1.min.js
+¦   ¦   ¦       ¦           jquery-ui.min.css
+¦   ¦   ¦       ¦           jquery-ui.min.js
+¦   ¦   ¦       ¦           
+¦   ¦   ¦       +--classes
+¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦       ¦   ¦   +--tsh
+¦   ¦   ¦       ¦   ¦       +--toolkit
+¦   ¦   ¦       ¦   ¦           +--codec
+¦   ¦   ¦       ¦   ¦               +--json
+¦   ¦   ¦       ¦   ¦                   +--autoconfig
+¦   ¦   ¦       ¦   ¦                   ¦       JsonCodecConfiguration.class
+¦   ¦   ¦       ¦   ¦                   ¦       JsonConfiguration.class
+¦   ¦   ¦       ¦   ¦                   ¦       
+¦   ¦   ¦       ¦   ¦                   +--impl
+¦   ¦   ¦       ¦   ¦                           JsonCodec$1.class
+¦   ¦   ¦       ¦   ¦                           JsonCodec$JsonMapperSupplier.class
+¦   ¦   ¦       ¦   ¦                           JsonCodec.class
+¦   ¦   ¦       ¦   ¦                           JsonUtils$JsonMapper.class
+¦   ¦   ¦       ¦   ¦                           JsonUtils.class
+¦   ¦   ¦       ¦   ¦                           
+¦   ¦   ¦       ¦   +--META-INF
+¦   ¦   ¦       ¦       +--spring
+¦   ¦   ¦       ¦               org.springframework.boot.autoconfigure.AutoConfiguration.imports
+¦   ¦   ¦       ¦               
+¦   ¦   ¦       +--generated-sources
+¦   ¦   ¦       ¦   +--annotations
+¦   ¦   ¦       +--generated-test-sources
+¦   ¦   ¦       ¦   +--test-annotations
+¦   ¦   ¦       +--javadoc-bundle-options
+¦   ¦   ¦       ¦       javadoc-options-javadoc-resources.xml
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--maven-archiver
+¦   ¦   ¦       ¦       pom.properties
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--maven-status
+¦   ¦   ¦       ¦   +--maven-compiler-plugin
+¦   ¦   ¦       ¦       +--compile
+¦   ¦   ¦       ¦       ¦   +--default-compile
+¦   ¦   ¦       ¦       ¦           createdFiles.lst
+¦   ¦   ¦       ¦       ¦           inputFiles.lst
+¦   ¦   ¦       ¦       ¦           
+¦   ¦   ¦       ¦       +--testCompile
+¦   ¦   ¦       ¦           +--default-testCompile
+¦   ¦   ¦       ¦                   createdFiles.lst
+¦   ¦   ¦       ¦                   inputFiles.lst
+¦   ¦   ¦       ¦                   
+¦   ¦   ¦       +--site
+¦   ¦   ¦       ¦   +--jacoco
+¦   ¦   ¦       ¦       ¦   index.html
+¦   ¦   ¦       ¦       ¦   jacoco-sessions.html
+¦   ¦   ¦       ¦       ¦   jacoco.csv
+¦   ¦   ¦       ¦       ¦   jacoco.xml
+¦   ¦   ¦       ¦       ¦   
+¦   ¦   ¦       ¦       +--com.tsh.toolkit.codec.json.autoconfig
+¦   ¦   ¦       ¦       ¦       index.html
+¦   ¦   ¦       ¦       ¦       index.source.html
+¦   ¦   ¦       ¦       ¦       JsonCodecConfiguration.html
+¦   ¦   ¦       ¦       ¦       JsonCodecConfiguration.java.html
+¦   ¦   ¦       ¦       ¦       JsonConfiguration.html
+¦   ¦   ¦       ¦       ¦       JsonConfiguration.java.html
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +--com.tsh.toolkit.codec.json.impl
+¦   ¦   ¦       ¦       ¦       index.html
+¦   ¦   ¦       ¦       ¦       index.source.html
+¦   ¦   ¦       ¦       ¦       JsonCodec$1.html
+¦   ¦   ¦       ¦       ¦       JsonCodec.html
+¦   ¦   ¦       ¦       ¦       JsonCodec.java.html
+¦   ¦   ¦       ¦       ¦       JsonUtils.html
+¦   ¦   ¦       ¦       ¦       JsonUtils.java.html
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +--jacoco-resources
+¦   ¦   ¦       ¦               branchfc.gif
+¦   ¦   ¦       ¦               branchnc.gif
+¦   ¦   ¦       ¦               branchpc.gif
+¦   ¦   ¦       ¦               bundle.gif
+¦   ¦   ¦       ¦               class.gif
+¦   ¦   ¦       ¦               down.gif
+¦   ¦   ¦       ¦               greenbar.gif
+¦   ¦   ¦       ¦               group.gif
+¦   ¦   ¦       ¦               method.gif
+¦   ¦   ¦       ¦               package.gif
+¦   ¦   ¦       ¦               prettify.css
+¦   ¦   ¦       ¦               prettify.js
+¦   ¦   ¦       ¦               redbar.gif
+¦   ¦   ¦       ¦               report.css
+¦   ¦   ¦       ¦               report.gif
+¦   ¦   ¦       ¦               session.gif
+¦   ¦   ¦       ¦               sort.gif
+¦   ¦   ¦       ¦               sort.js
+¦   ¦   ¦       ¦               source.gif
+¦   ¦   ¦       ¦               up.gif
+¦   ¦   ¦       ¦               
+¦   ¦   ¦       +--surefire-reports
+¦   ¦   ¦       ¦       2025-12-15T10-12-37_071.dumpstream
+¦   ¦   ¦       ¦       com.tsh.toolkit.codec.json.impl.JsonCodecTest.txt
+¦   ¦   ¦       ¦       com.tsh.toolkit.codec.json.impl.JsonUtilsTest.txt
+¦   ¦   ¦       ¦       TEST-com.tsh.toolkit.codec.json.impl.JsonCodecTest.xml
+¦   ¦   ¦       ¦       TEST-com.tsh.toolkit.codec.json.impl.JsonUtilsTest.xml
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--test-classes
+¦   ¦   ¦           +--com
+¦   ¦   ¦               +--tsh
+¦   ¦   ¦                   +--toolkit
+¦   ¦   ¦                       +--codec
+¦   ¦   ¦                           +--json
+¦   ¦   ¦                               +--impl
+¦   ¦   ¦                                       JsonCodecTest$1.class
+¦   ¦   ¦                                       JsonCodecTest$2.class
+¦   ¦   ¦                                       JsonCodecTest$3.class
+¦   ¦   ¦                                       JsonCodecTest$4.class
+¦   ¦   ¦                                       JsonCodecTest$5.class
+¦   ¦   ¦                                       JsonCodecTest$6.class
+¦   ¦   ¦                                       JsonCodecTest$7.class
+¦   ¦   ¦                                       JsonCodecTest$TestConfig.class
+¦   ¦   ¦                                       JsonCodecTest.class
+¦   ¦   ¦                                       JsonUtilsTest.class
+¦   ¦   ¦                                       
+¦   ¦   +--codec-message-pack
+¦   ¦   ¦   ¦   .checkstyle
+¦   ¦   ¦   ¦   .classpath
+¦   ¦   ¦   ¦   .factorypath
+¦   ¦   ¦   ¦   .project
+¦   ¦   ¦   ¦   pom.xml
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +--.settings
+¦   ¦   ¦   ¦       org.eclipse.core.resources.prefs
+¦   ¦   ¦   ¦       org.eclipse.jdt.apt.core.prefs
+¦   ¦   ¦   ¦       org.eclipse.jdt.core.prefs
+¦   ¦   ¦   ¦       org.eclipse.m2e.core.prefs
+¦   ¦   ¦   ¦       org.springframework.ide.eclipse.prefs
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +--src
+¦   ¦   ¦   ¦   +--main
+¦   ¦   ¦   ¦   ¦   +--java
+¦   ¦   ¦   ¦   ¦   ¦   +--com
+¦   ¦   ¦   ¦   ¦   ¦       +--tsh
+¦   ¦   ¦   ¦   ¦   ¦           +--toolkit
+¦   ¦   ¦   ¦   ¦   ¦               +--codec
+¦   ¦   ¦   ¦   ¦   ¦                   +--messagepack
+¦   ¦   ¦   ¦   ¦   ¦                       +--autoconfig
+¦   ¦   ¦   ¦   ¦   ¦                       ¦       MessagePackCodecConfiguration.java
+¦   ¦   ¦   ¦   ¦   ¦                       ¦       
+¦   ¦   ¦   ¦   ¦   ¦                       +--impl
+¦   ¦   ¦   ¦   ¦   ¦                               MessagePackCodec.java
+¦   ¦   ¦   ¦   ¦   ¦                               
+¦   ¦   ¦   ¦   ¦   +--resources
+¦   ¦   ¦   ¦   ¦       +--META-INF
+¦   ¦   ¦   ¦   ¦           +--spring
+¦   ¦   ¦   ¦   ¦                   org.springframework.boot.autoconfigure.AutoConfiguration.imports
+¦   ¦   ¦   ¦   ¦                   
+¦   ¦   ¦   ¦   +--test
+¦   ¦   ¦   ¦       +--java
+¦   ¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦   ¦       ¦       +--tsh
+¦   ¦   ¦   ¦       ¦           +--toolkit
+¦   ¦   ¦   ¦       ¦               +--codec
+¦   ¦   ¦   ¦       ¦                   +--messagepack
+¦   ¦   ¦   ¦       ¦                       +--impl
+¦   ¦   ¦   ¦       ¦                               MessagePackCodecTest.java
+¦   ¦   ¦   ¦       ¦                               
+¦   ¦   ¦   ¦       +--resources
+¦   ¦   ¦   +--target
+¦   ¦   ¦       ¦   checkstyle-cachefile
+¦   ¦   ¦       ¦   checkstyle-checker.xml
+¦   ¦   ¦       ¦   checkstyle-result.xml
+¦   ¦   ¦       ¦   codec-message-pack-0.0.1-SNAPSHOT-javadoc.jar
+¦   ¦   ¦       ¦   codec-message-pack-0.0.1-SNAPSHOT-sources.jar
+¦   ¦   ¦       ¦   codec-message-pack-0.0.1-SNAPSHOT.jar
+¦   ¦   ¦       ¦   jacoco.exec
+¦   ¦   ¦       ¦   maven-javadoc-plugin-stale-data.txt
+¦   ¦   ¦       ¦   
+¦   ¦   ¦       +--apidocs
+¦   ¦   ¦       ¦   ¦   allclasses-index.html
+¦   ¦   ¦       ¦   ¦   allpackages-index.html
+¦   ¦   ¦       ¦   ¦   copy.svg
+¦   ¦   ¦       ¦   ¦   element-list
+¦   ¦   ¦       ¦   ¦   help-doc.html
+¦   ¦   ¦       ¦   ¦   index-all.html
+¦   ¦   ¦       ¦   ¦   index.html
+¦   ¦   ¦       ¦   ¦   link.svg
+¦   ¦   ¦       ¦   ¦   member-search-index.js
+¦   ¦   ¦       ¦   ¦   module-search-index.js
+¦   ¦   ¦       ¦   ¦   overview-summary.html
+¦   ¦   ¦       ¦   ¦   overview-tree.html
+¦   ¦   ¦       ¦   ¦   package-search-index.js
+¦   ¦   ¦       ¦   ¦   script.js
+¦   ¦   ¦       ¦   ¦   search-page.js
+¦   ¦   ¦       ¦   ¦   search.html
+¦   ¦   ¦       ¦   ¦   search.js
+¦   ¦   ¦       ¦   ¦   stylesheet.css
+¦   ¦   ¦       ¦   ¦   tag-search-index.js
+¦   ¦   ¦       ¦   ¦   type-search-index.js
+¦   ¦   ¦       ¦   ¦   
+¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦       ¦   ¦   +--tsh
+¦   ¦   ¦       ¦   ¦       +--toolkit
+¦   ¦   ¦       ¦   ¦           +--codec
+¦   ¦   ¦       ¦   ¦               +--messagepack
+¦   ¦   ¦       ¦   ¦                   +--autoconfig
+¦   ¦   ¦       ¦   ¦                   ¦   ¦   MessagePackCodecConfiguration.html
+¦   ¦   ¦       ¦   ¦                   ¦   ¦   package-summary.html
+¦   ¦   ¦       ¦   ¦                   ¦   ¦   package-tree.html
+¦   ¦   ¦       ¦   ¦                   ¦   ¦   package-use.html
+¦   ¦   ¦       ¦   ¦                   ¦   ¦   
+¦   ¦   ¦       ¦   ¦                   ¦   +--class-use
+¦   ¦   ¦       ¦   ¦                   ¦           MessagePackCodecConfiguration.html
+¦   ¦   ¦       ¦   ¦                   ¦           
+¦   ¦   ¦       ¦   ¦                   +--impl
+¦   ¦   ¦       ¦   ¦                       ¦   MessagePackCodec.html
+¦   ¦   ¦       ¦   ¦                       ¦   MessagePackCodec.MessagePackMapperSupplier.html
+¦   ¦   ¦       ¦   ¦                       ¦   package-summary.html
+¦   ¦   ¦       ¦   ¦                       ¦   package-tree.html
+¦   ¦   ¦       ¦   ¦                       ¦   package-use.html
+¦   ¦   ¦       ¦   ¦                       ¦   
+¦   ¦   ¦       ¦   ¦                       +--class-use
+¦   ¦   ¦       ¦   ¦                               MessagePackCodec.html
+¦   ¦   ¦       ¦   ¦                               MessagePackCodec.MessagePackMapperSupplier.html
+¦   ¦   ¦       ¦   ¦                               
+¦   ¦   ¦       ¦   +--legal
+¦   ¦   ¦       ¦   ¦       ADDITIONAL_LICENSE_INFO
+¦   ¦   ¦       ¦   ¦       ASSEMBLY_EXCEPTION
+¦   ¦   ¦       ¦   ¦       jquery.md
+¦   ¦   ¦       ¦   ¦       jqueryUI.md
+¦   ¦   ¦       ¦   ¦       LICENSE
+¦   ¦   ¦       ¦   ¦       
+¦   ¦   ¦       ¦   +--resources
+¦   ¦   ¦       ¦   ¦       glass.png
+¦   ¦   ¦       ¦   ¦       x.png
+¦   ¦   ¦       ¦   ¦       
+¦   ¦   ¦       ¦   +--script-dir
+¦   ¦   ¦       ¦           jquery-3.6.1.min.js
+¦   ¦   ¦       ¦           jquery-ui.min.css
+¦   ¦   ¦       ¦           jquery-ui.min.js
+¦   ¦   ¦       ¦           
+¦   ¦   ¦       +--classes
+¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦       ¦   ¦   +--tsh
+¦   ¦   ¦       ¦   ¦       +--toolkit
+¦   ¦   ¦       ¦   ¦           +--codec
+¦   ¦   ¦       ¦   ¦               +--messagepack
+¦   ¦   ¦       ¦   ¦                   +--autoconfig
+¦   ¦   ¦       ¦   ¦                   ¦       MessagePackCodecConfiguration.class
+¦   ¦   ¦       ¦   ¦                   ¦       
+¦   ¦   ¦       ¦   ¦                   +--impl
+¦   ¦   ¦       ¦   ¦                           MessagePackCodec$1.class
+¦   ¦   ¦       ¦   ¦                           MessagePackCodec$MessagePackMapperSupplier.class
+¦   ¦   ¦       ¦   ¦                           MessagePackCodec.class
+¦   ¦   ¦       ¦   ¦                           
+¦   ¦   ¦       ¦   +--META-INF
+¦   ¦   ¦       ¦       +--spring
+¦   ¦   ¦       ¦               org.springframework.boot.autoconfigure.AutoConfiguration.imports
+¦   ¦   ¦       ¦               
+¦   ¦   ¦       +--generated-sources
+¦   ¦   ¦       ¦   +--annotations
+¦   ¦   ¦       +--generated-test-sources
+¦   ¦   ¦       ¦   +--test-annotations
+¦   ¦   ¦       +--javadoc-bundle-options
+¦   ¦   ¦       ¦       javadoc-options-javadoc-resources.xml
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--maven-archiver
+¦   ¦   ¦       ¦       pom.properties
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--maven-status
+¦   ¦   ¦       ¦   +--maven-compiler-plugin
+¦   ¦   ¦       ¦       +--compile
+¦   ¦   ¦       ¦       ¦   +--default-compile
+¦   ¦   ¦       ¦       ¦           createdFiles.lst
+¦   ¦   ¦       ¦       ¦           inputFiles.lst
+¦   ¦   ¦       ¦       ¦           
+¦   ¦   ¦       ¦       +--testCompile
+¦   ¦   ¦       ¦           +--default-testCompile
+¦   ¦   ¦       ¦                   createdFiles.lst
+¦   ¦   ¦       ¦                   inputFiles.lst
+¦   ¦   ¦       ¦                   
+¦   ¦   ¦       +--site
+¦   ¦   ¦       ¦   +--jacoco
+¦   ¦   ¦       ¦       ¦   index.html
+¦   ¦   ¦       ¦       ¦   jacoco-sessions.html
+¦   ¦   ¦       ¦       ¦   jacoco.csv
+¦   ¦   ¦       ¦       ¦   jacoco.xml
+¦   ¦   ¦       ¦       ¦   
+¦   ¦   ¦       ¦       +--com.tsh.toolkit.codec.messagepack.autoconfig
+¦   ¦   ¦       ¦       ¦       index.html
+¦   ¦   ¦       ¦       ¦       index.source.html
+¦   ¦   ¦       ¦       ¦       MessagePackCodecConfiguration.html
+¦   ¦   ¦       ¦       ¦       MessagePackCodecConfiguration.java.html
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +--com.tsh.toolkit.codec.messagepack.impl
+¦   ¦   ¦       ¦       ¦       index.html
+¦   ¦   ¦       ¦       ¦       index.source.html
+¦   ¦   ¦       ¦       ¦       MessagePackCodec$1.html
+¦   ¦   ¦       ¦       ¦       MessagePackCodec.html
+¦   ¦   ¦       ¦       ¦       MessagePackCodec.java.html
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +--jacoco-resources
+¦   ¦   ¦       ¦               branchfc.gif
+¦   ¦   ¦       ¦               branchnc.gif
+¦   ¦   ¦       ¦               branchpc.gif
+¦   ¦   ¦       ¦               bundle.gif
+¦   ¦   ¦       ¦               class.gif
+¦   ¦   ¦       ¦               down.gif
+¦   ¦   ¦       ¦               greenbar.gif
+¦   ¦   ¦       ¦               group.gif
+¦   ¦   ¦       ¦               method.gif
+¦   ¦   ¦       ¦               package.gif
+¦   ¦   ¦       ¦               prettify.css
+¦   ¦   ¦       ¦               prettify.js
+¦   ¦   ¦       ¦               redbar.gif
+¦   ¦   ¦       ¦               report.css
+¦   ¦   ¦       ¦               report.gif
+¦   ¦   ¦       ¦               session.gif
+¦   ¦   ¦       ¦               sort.gif
+¦   ¦   ¦       ¦               sort.js
+¦   ¦   ¦       ¦               source.gif
+¦   ¦   ¦       ¦               up.gif
+¦   ¦   ¦       ¦               
+¦   ¦   ¦       +--surefire-reports
+¦   ¦   ¦       ¦       2025-12-15T10-12-37_071.dumpstream
+¦   ¦   ¦       ¦       com.tsh.toolkit.codec.messagepack.impl.MessagePackCodecTest.txt
+¦   ¦   ¦       ¦       TEST-com.tsh.toolkit.codec.messagepack.impl.MessagePackCodecTest.xml
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--test-classes
+¦   ¦   ¦           +--com
+¦   ¦   ¦               +--tsh
+¦   ¦   ¦                   +--toolkit
+¦   ¦   ¦                       +--codec
+¦   ¦   ¦                           +--messagepack
+¦   ¦   ¦                               +--impl
+¦   ¦   ¦                                       MessagePackCodecTest$1.class
+¦   ¦   ¦                                       MessagePackCodecTest$1Person.class
+¦   ¦   ¦                                       MessagePackCodecTest$1Sample.class
+¦   ¦   ¦                                       MessagePackCodecTest$2.class
+¦   ¦   ¦                                       MessagePackCodecTest$3.class
+¦   ¦   ¦                                       MessagePackCodecTest$4.class
+¦   ¦   ¦                                       MessagePackCodecTest$5.class
+¦   ¦   ¦                                       MessagePackCodecTest$6.class
+¦   ¦   ¦                                       MessagePackCodecTest$7.class
+¦   ¦   ¦                                       MessagePackCodecTest$8.class
+¦   ¦   ¦                                       MessagePackCodecTest$Invalid.class
+¦   ¦   ¦                                       MessagePackCodecTest.class
+¦   ¦   ¦                                       
+¦   ¦   +--src
+¦   ¦   ¦   +--site
+¦   ¦   +--target
+¦   ¦           checkstyle-cachefile
+¦   ¦           checkstyle-checker.xml
+¦   ¦           checkstyle-result.xml
+¦   ¦           
+¦   +--file-core
+¦   ¦   ¦   .checkstyle
+¦   ¦   ¦   .classpath
+¦   ¦   ¦   .factorypath
+¦   ¦   ¦   .project
+¦   ¦   ¦   pom.xml
+¦   ¦   ¦   README.md
+¦   ¦   ¦   
+¦   ¦   +--.settings
+¦   ¦   ¦       org.eclipse.core.resources.prefs
+¦   ¦   ¦       org.eclipse.jdt.apt.core.prefs
+¦   ¦   ¦       org.eclipse.jdt.core.prefs
+¦   ¦   ¦       org.eclipse.m2e.core.prefs
+¦   ¦   ¦       org.springframework.ide.eclipse.prefs
+¦   ¦   ¦       
+¦   ¦   +--src
+¦   ¦   ¦   +--main
+¦   ¦   ¦   ¦   +--java
+¦   ¦   ¦   ¦   ¦   +--com
+¦   ¦   ¦   ¦   ¦       +--tsh
+¦   ¦   ¦   ¦   ¦           +--toolkit
+¦   ¦   ¦   ¦   ¦               +--files
+¦   ¦   ¦   ¦   ¦                   ¦   DataFileReader.java
+¦   ¦   ¦   ¦   ¦                   ¦   DataFileWriter.java
+¦   ¦   ¦   ¦   ¦                   ¦   LockedFile.java
+¦   ¦   ¦   ¦   ¦                   ¦   NioChannels.java
+¦   ¦   ¦   ¦   ¦                   ¦   NioFiles.java
+¦   ¦   ¦   ¦   ¦                   ¦   NioPaths.java
+¦   ¦   ¦   ¦   ¦                   ¦   UriSyntaxException.java
+¦   ¦   ¦   ¦   ¦                   ¦   
+¦   ¦   ¦   ¦   ¦                   +--impl
+¦   ¦   ¦   ¦   ¦                           DataFileImpl.java
+¦   ¦   ¦   ¦   ¦                           DataFileReaderImpl.java
+¦   ¦   ¦   ¦   ¦                           DataFileWriterImpl.java
+¦   ¦   ¦   ¦   ¦                           
+¦   ¦   ¦   ¦   +--resources
+¦   ¦   ¦   +--test
+¦   ¦   ¦       +--java
+¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦       ¦       +--tsh
+¦   ¦   ¦       ¦           +--toolkit
+¦   ¦   ¦       ¦               +--files
+¦   ¦   ¦       ¦                   ¦   LockedFileTest.java
+¦   ¦   ¦       ¦                   ¦   NioFilesTest.java
+¦   ¦   ¦       ¦                   ¦   NioPathsTest.java
+¦   ¦   ¦       ¦                   ¦   UriSyntaxExceptionTest.java
+¦   ¦   ¦       ¦                   ¦   
+¦   ¦   ¦       ¦                   +--impl
+¦   ¦   ¦       ¦                           DataFileTest.java
+¦   ¦   ¦       ¦                           MessagePackSerializerTest.java
+¦   ¦   ¦       ¦                           
+¦   ¦   ¦       +--resources
+¦   ¦   +--target
+¦   ¦       ¦   checkstyle-cachefile
+¦   ¦       ¦   checkstyle-checker.xml
+¦   ¦       ¦   checkstyle-result.xml
+¦   ¦       ¦   file-core-0.0.1-SNAPSHOT-javadoc.jar
+¦   ¦       ¦   file-core-0.0.1-SNAPSHOT-sources.jar
+¦   ¦       ¦   file-core-0.0.1-SNAPSHOT.jar
+¦   ¦       ¦   jacoco.exec
+¦   ¦       ¦   maven-javadoc-plugin-stale-data.txt
+¦   ¦       ¦   
+¦   ¦       +--apidocs
+¦   ¦       ¦   ¦   allclasses-index.html
+¦   ¦       ¦   ¦   allpackages-index.html
+¦   ¦       ¦   ¦   constant-values.html
+¦   ¦       ¦   ¦   copy.svg
+¦   ¦       ¦   ¦   element-list
+¦   ¦       ¦   ¦   help-doc.html
+¦   ¦       ¦   ¦   index-all.html
+¦   ¦       ¦   ¦   index.html
+¦   ¦       ¦   ¦   link.svg
+¦   ¦       ¦   ¦   member-search-index.js
+¦   ¦       ¦   ¦   module-search-index.js
+¦   ¦       ¦   ¦   overview-summary.html
+¦   ¦       ¦   ¦   overview-tree.html
+¦   ¦       ¦   ¦   package-search-index.js
+¦   ¦       ¦   ¦   script.js
+¦   ¦       ¦   ¦   search-page.js
+¦   ¦       ¦   ¦   search.html
+¦   ¦       ¦   ¦   search.js
+¦   ¦       ¦   ¦   serialized-form.html
+¦   ¦       ¦   ¦   stylesheet.css
+¦   ¦       ¦   ¦   tag-search-index.js
+¦   ¦       ¦   ¦   type-search-index.js
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +--com
+¦   ¦       ¦   ¦   +--tsh
+¦   ¦       ¦   ¦       +--toolkit
+¦   ¦       ¦   ¦           +--files
+¦   ¦       ¦   ¦               ¦   DataFileReader.html
+¦   ¦       ¦   ¦               ¦   DataFileWriter.html
+¦   ¦       ¦   ¦               ¦   LockedFile.html
+¦   ¦       ¦   ¦               ¦   LockedFile.LockedTask.html
+¦   ¦       ¦   ¦               ¦   NioChannels.html
+¦   ¦       ¦   ¦               ¦   NioFiles.html
+¦   ¦       ¦   ¦               ¦   NioPaths.html
+¦   ¦       ¦   ¦               ¦   package-summary.html
+¦   ¦       ¦   ¦               ¦   package-tree.html
+¦   ¦       ¦   ¦               ¦   package-use.html
+¦   ¦       ¦   ¦               ¦   UriSyntaxException.html
+¦   ¦       ¦   ¦               ¦   
+¦   ¦       ¦   ¦               +--class-use
+¦   ¦       ¦   ¦               ¦       DataFileReader.html
+¦   ¦       ¦   ¦               ¦       DataFileWriter.html
+¦   ¦       ¦   ¦               ¦       LockedFile.html
+¦   ¦       ¦   ¦               ¦       LockedFile.LockedTask.html
+¦   ¦       ¦   ¦               ¦       NioChannels.html
+¦   ¦       ¦   ¦               ¦       NioFiles.html
+¦   ¦       ¦   ¦               ¦       NioPaths.html
+¦   ¦       ¦   ¦               ¦       UriSyntaxException.html
+¦   ¦       ¦   ¦               ¦       
+¦   ¦       ¦   ¦               +--impl
+¦   ¦       ¦   ¦                   ¦   DataFileImpl.html
+¦   ¦       ¦   ¦                   ¦   DataFileReaderImpl.html
+¦   ¦       ¦   ¦                   ¦   DataFileWriterImpl.html
+¦   ¦       ¦   ¦                   ¦   package-summary.html
+¦   ¦       ¦   ¦                   ¦   package-tree.html
+¦   ¦       ¦   ¦                   ¦   package-use.html
+¦   ¦       ¦   ¦                   ¦   
+¦   ¦       ¦   ¦                   +--class-use
+¦   ¦       ¦   ¦                           DataFileImpl.html
+¦   ¦       ¦   ¦                           DataFileReaderImpl.html
+¦   ¦       ¦   ¦                           DataFileWriterImpl.html
+¦   ¦       ¦   ¦                           
+¦   ¦       ¦   +--legal
+¦   ¦       ¦   ¦       ADDITIONAL_LICENSE_INFO
+¦   ¦       ¦   ¦       ASSEMBLY_EXCEPTION
+¦   ¦       ¦   ¦       jquery.md
+¦   ¦       ¦   ¦       jqueryUI.md
+¦   ¦       ¦   ¦       LICENSE
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +--resources
+¦   ¦       ¦   ¦       glass.png
+¦   ¦       ¦   ¦       x.png
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +--script-dir
+¦   ¦       ¦           jquery-3.6.1.min.js
+¦   ¦       ¦           jquery-ui.min.css
+¦   ¦       ¦           jquery-ui.min.js
+¦   ¦       ¦           
+¦   ¦       +--classes
+¦   ¦       ¦   +--com
+¦   ¦       ¦       +--tsh
+¦   ¦       ¦           +--toolkit
+¦   ¦       ¦               +--files
+¦   ¦       ¦                   ¦   DataFileReader.class
+¦   ¦       ¦                   ¦   DataFileWriter.class
+¦   ¦       ¦                   ¦   LockedFile$LockedTask.class
+¦   ¦       ¦                   ¦   LockedFile.class
+¦   ¦       ¦                   ¦   NioChannels.class
+¦   ¦       ¦                   ¦   NioFiles$1.class
+¦   ¦       ¦                   ¦   NioFiles$2.class
+¦   ¦       ¦                   ¦   NioFiles.class
+¦   ¦       ¦                   ¦   NioPaths.class
+¦   ¦       ¦                   ¦   UriSyntaxException.class
+¦   ¦       ¦                   ¦   
+¦   ¦       ¦                   +--impl
+¦   ¦       ¦                           DataFileImpl.class
+¦   ¦       ¦                           DataFileReaderImpl$1.class
+¦   ¦       ¦                           DataFileReaderImpl.class
+¦   ¦       ¦                           DataFileWriterImpl.class
+¦   ¦       ¦                           
+¦   ¦       +--generated-sources
+¦   ¦       ¦   +--annotations
+¦   ¦       +--generated-test-sources
+¦   ¦       ¦   +--test-annotations
+¦   ¦       +--javadoc-bundle-options
+¦   ¦       ¦       javadoc-options-javadoc-resources.xml
+¦   ¦       ¦       
+¦   ¦       +--maven-archiver
+¦   ¦       ¦       pom.properties
+¦   ¦       ¦       
+¦   ¦       +--maven-status
+¦   ¦       ¦   +--maven-compiler-plugin
+¦   ¦       ¦       +--compile
+¦   ¦       ¦       ¦   +--default-compile
+¦   ¦       ¦       ¦           createdFiles.lst
+¦   ¦       ¦       ¦           inputFiles.lst
+¦   ¦       ¦       ¦           
+¦   ¦       ¦       +--testCompile
+¦   ¦       ¦           +--default-testCompile
+¦   ¦       ¦                   createdFiles.lst
+¦   ¦       ¦                   inputFiles.lst
+¦   ¦       ¦                   
+¦   ¦       +--site
+¦   ¦       ¦   +--jacoco
+¦   ¦       ¦       ¦   index.html
+¦   ¦       ¦       ¦   jacoco-sessions.html
+¦   ¦       ¦       ¦   jacoco.csv
+¦   ¦       ¦       ¦   jacoco.xml
+¦   ¦       ¦       ¦   
+¦   ¦       ¦       +--com.tsh.toolkit.files
+¦   ¦       ¦       ¦       index.html
+¦   ¦       ¦       ¦       index.source.html
+¦   ¦       ¦       ¦       LockedFile.html
+¦   ¦       ¦       ¦       LockedFile.java.html
+¦   ¦       ¦       ¦       NioChannels.html
+¦   ¦       ¦       ¦       NioChannels.java.html
+¦   ¦       ¦       ¦       NioFiles$1.html
+¦   ¦       ¦       ¦       NioFiles$2.html
+¦   ¦       ¦       ¦       NioFiles.html
+¦   ¦       ¦       ¦       NioFiles.java.html
+¦   ¦       ¦       ¦       NioPaths.html
+¦   ¦       ¦       ¦       NioPaths.java.html
+¦   ¦       ¦       ¦       UriSyntaxException.html
+¦   ¦       ¦       ¦       UriSyntaxException.java.html
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +--com.tsh.toolkit.files.impl
+¦   ¦       ¦       ¦       DataFileImpl.html
+¦   ¦       ¦       ¦       DataFileImpl.java.html
+¦   ¦       ¦       ¦       DataFileReaderImpl$1.html
+¦   ¦       ¦       ¦       DataFileReaderImpl.html
+¦   ¦       ¦       ¦       DataFileReaderImpl.java.html
+¦   ¦       ¦       ¦       DataFileWriterImpl.html
+¦   ¦       ¦       ¦       DataFileWriterImpl.java.html
+¦   ¦       ¦       ¦       index.html
+¦   ¦       ¦       ¦       index.source.html
+¦   ¦       ¦       ¦       
+¦   ¦       ¦       +--jacoco-resources
+¦   ¦       ¦               branchfc.gif
+¦   ¦       ¦               branchnc.gif
+¦   ¦       ¦               branchpc.gif
+¦   ¦       ¦               bundle.gif
+¦   ¦       ¦               class.gif
+¦   ¦       ¦               down.gif
+¦   ¦       ¦               greenbar.gif
+¦   ¦       ¦               group.gif
+¦   ¦       ¦               method.gif
+¦   ¦       ¦               package.gif
+¦   ¦       ¦               prettify.css
+¦   ¦       ¦               prettify.js
+¦   ¦       ¦               redbar.gif
+¦   ¦       ¦               report.css
+¦   ¦       ¦               report.gif
+¦   ¦       ¦               session.gif
+¦   ¦       ¦               sort.gif
+¦   ¦       ¦               sort.js
+¦   ¦       ¦               source.gif
+¦   ¦       ¦               up.gif
+¦   ¦       ¦               
+¦   ¦       +--surefire-reports
+¦   ¦       ¦       2025-12-15T10-12-37_071.dumpstream
+¦   ¦       ¦       com.tsh.toolkit.files.impl.DataFileTest.txt
+¦   ¦       ¦       com.tsh.toolkit.files.impl.MessagePackSerializerTest.txt
+¦   ¦       ¦       com.tsh.toolkit.files.LockedFileTest.txt
+¦   ¦       ¦       com.tsh.toolkit.files.NioFilesTest.txt
+¦   ¦       ¦       com.tsh.toolkit.files.NioPathsTest.txt
+¦   ¦       ¦       com.tsh.toolkit.files.UriSyntaxExceptionTest.txt
+¦   ¦       ¦       TEST-com.tsh.toolkit.files.impl.DataFileTest.xml
+¦   ¦       ¦       TEST-com.tsh.toolkit.files.impl.MessagePackSerializerTest.xml
+¦   ¦       ¦       TEST-com.tsh.toolkit.files.LockedFileTest.xml
+¦   ¦       ¦       TEST-com.tsh.toolkit.files.NioFilesTest.xml
+¦   ¦       ¦       TEST-com.tsh.toolkit.files.NioPathsTest.xml
+¦   ¦       ¦       TEST-com.tsh.toolkit.files.UriSyntaxExceptionTest.xml
+¦   ¦       ¦       
+¦   ¦       +--test-classes
+¦   ¦           +--com
+¦   ¦               +--tsh
+¦   ¦                   +--toolkit
+¦   ¦                       +--files
+¦   ¦                           ¦   LockedFileTest.class
+¦   ¦                           ¦   NioFilesTest.class
+¦   ¦                           ¦   NioPathsTest.class
+¦   ¦                           ¦   UriSyntaxExceptionTest.class
+¦   ¦                           ¦   
+¦   ¦                           +--impl
+¦   ¦                                   DataFileTest.class
+¦   ¦                                   MessagePackSerializerTest$1.class
+¦   ¦                                   MessagePackSerializerTest$2.class
+¦   ¦                                   MessagePackSerializerTest$TestClass.class
+¦   ¦                                   MessagePackSerializerTest.class
+¦   ¦                                   
+¦   +--lock-core-libraries
+¦   ¦   ¦   .project
+¦   ¦   ¦   pom.xml
+¦   ¦   ¦   README.md
+¦   ¦   ¦   
+¦   ¦   +--.settings
+¦   ¦   ¦       org.eclipse.core.resources.prefs
+¦   ¦   ¦       org.eclipse.m2e.core.prefs
+¦   ¦   ¦       
+¦   ¦   +--lock-core
+¦   ¦   ¦   ¦   .checkstyle
+¦   ¦   ¦   ¦   .classpath
+¦   ¦   ¦   ¦   .factorypath
+¦   ¦   ¦   ¦   .project
+¦   ¦   ¦   ¦   pom.xml
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +--.settings
+¦   ¦   ¦   ¦       org.eclipse.core.resources.prefs
+¦   ¦   ¦   ¦       org.eclipse.jdt.apt.core.prefs
+¦   ¦   ¦   ¦       org.eclipse.jdt.core.prefs
+¦   ¦   ¦   ¦       org.eclipse.m2e.core.prefs
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +--src
+¦   ¦   ¦   ¦   +--main
+¦   ¦   ¦   ¦   ¦   +--java
+¦   ¦   ¦   ¦   ¦   ¦   +--com
+¦   ¦   ¦   ¦   ¦   ¦       +--tsh
+¦   ¦   ¦   ¦   ¦   ¦           +--toolkit
+¦   ¦   ¦   ¦   ¦   ¦               +--common
+¦   ¦   ¦   ¦   ¦   ¦                   +--lock
+¦   ¦   ¦   ¦   ¦   ¦                       ¦   DistributedLockProvider.java
+¦   ¦   ¦   ¦   ¦   ¦                       ¦   LockHandle.java
+¦   ¦   ¦   ¦   ¦   ¦                       ¦   
+¦   ¦   ¦   ¦   ¦   ¦                       +--executor
+¦   ¦   ¦   ¦   ¦   ¦                       ¦   +--impl
+¦   ¦   ¦   ¦   ¦   ¦                       ¦           DistributedLockExecutor.java
+¦   ¦   ¦   ¦   ¦   ¦                       ¦           
+¦   ¦   ¦   ¦   ¦   ¦                       +--impl
+¦   ¦   ¦   ¦   ¦   ¦                               LockHandleImpl.java
+¦   ¦   ¦   ¦   ¦   ¦                               
+¦   ¦   ¦   ¦   ¦   +--resources
+¦   ¦   ¦   ¦   +--test
+¦   ¦   ¦   ¦       +--java
+¦   ¦   ¦   ¦       +--resources
+¦   ¦   ¦   +--target
+¦   ¦   ¦       ¦   checkstyle-cachefile
+¦   ¦   ¦       ¦   checkstyle-checker.xml
+¦   ¦   ¦       ¦   checkstyle-result.xml
+¦   ¦   ¦       ¦   lock-core-0.0.1-SNAPSHOT-javadoc.jar
+¦   ¦   ¦       ¦   lock-core-0.0.1-SNAPSHOT-sources.jar
+¦   ¦   ¦       ¦   lock-core-0.0.1-SNAPSHOT.jar
+¦   ¦   ¦       ¦   maven-javadoc-plugin-stale-data.txt
+¦   ¦   ¦       ¦   
+¦   ¦   ¦       +--apidocs
+¦   ¦   ¦       ¦   ¦   allclasses-index.html
+¦   ¦   ¦       ¦   ¦   allpackages-index.html
+¦   ¦   ¦       ¦   ¦   copy.svg
+¦   ¦   ¦       ¦   ¦   element-list
+¦   ¦   ¦       ¦   ¦   help-doc.html
+¦   ¦   ¦       ¦   ¦   index-all.html
+¦   ¦   ¦       ¦   ¦   index.html
+¦   ¦   ¦       ¦   ¦   link.svg
+¦   ¦   ¦       ¦   ¦   member-search-index.js
+¦   ¦   ¦       ¦   ¦   module-search-index.js
+¦   ¦   ¦       ¦   ¦   overview-summary.html
+¦   ¦   ¦       ¦   ¦   overview-tree.html
+¦   ¦   ¦       ¦   ¦   package-search-index.js
+¦   ¦   ¦       ¦   ¦   script.js
+¦   ¦   ¦       ¦   ¦   search-page.js
+¦   ¦   ¦       ¦   ¦   search.html
+¦   ¦   ¦       ¦   ¦   search.js
+¦   ¦   ¦       ¦   ¦   stylesheet.css
+¦   ¦   ¦       ¦   ¦   tag-search-index.js
+¦   ¦   ¦       ¦   ¦   type-search-index.js
+¦   ¦   ¦       ¦   ¦   
+¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦       ¦   ¦   +--tsh
+¦   ¦   ¦       ¦   ¦       +--toolkit
+¦   ¦   ¦       ¦   ¦           +--common
+¦   ¦   ¦       ¦   ¦               +--lock
+¦   ¦   ¦       ¦   ¦                   ¦   DistributedLockProvider.html
+¦   ¦   ¦       ¦   ¦                   ¦   LockHandle.html
+¦   ¦   ¦       ¦   ¦                   ¦   package-summary.html
+¦   ¦   ¦       ¦   ¦                   ¦   package-tree.html
+¦   ¦   ¦       ¦   ¦                   ¦   package-use.html
+¦   ¦   ¦       ¦   ¦                   ¦   
+¦   ¦   ¦       ¦   ¦                   +--class-use
+¦   ¦   ¦       ¦   ¦                   ¦       DistributedLockProvider.html
+¦   ¦   ¦       ¦   ¦                   ¦       LockHandle.html
+¦   ¦   ¦       ¦   ¦                   ¦       
+¦   ¦   ¦       ¦   ¦                   +--executor
+¦   ¦   ¦       ¦   ¦                   ¦   +--impl
+¦   ¦   ¦       ¦   ¦                   ¦       ¦   DistributedLockExecutor.html
+¦   ¦   ¦       ¦   ¦                   ¦       ¦   DistributedLockExecutor.LockCallback.html
+¦   ¦   ¦       ¦   ¦                   ¦       ¦   DistributedLockExecutor.LockResult.html
+¦   ¦   ¦       ¦   ¦                   ¦       ¦   DistributedLockExecutor.VoidLockCallback.html
+¦   ¦   ¦       ¦   ¦                   ¦       ¦   package-summary.html
+¦   ¦   ¦       ¦   ¦                   ¦       ¦   package-tree.html
+¦   ¦   ¦       ¦   ¦                   ¦       ¦   package-use.html
+¦   ¦   ¦       ¦   ¦                   ¦       ¦   
+¦   ¦   ¦       ¦   ¦                   ¦       +--class-use
+¦   ¦   ¦       ¦   ¦                   ¦               DistributedLockExecutor.html
+¦   ¦   ¦       ¦   ¦                   ¦               DistributedLockExecutor.LockCallback.html
+¦   ¦   ¦       ¦   ¦                   ¦               DistributedLockExecutor.LockResult.html
+¦   ¦   ¦       ¦   ¦                   ¦               DistributedLockExecutor.VoidLockCallback.html
+¦   ¦   ¦       ¦   ¦                   ¦               
+¦   ¦   ¦       ¦   ¦                   +--impl
+¦   ¦   ¦       ¦   ¦                       ¦   LockHandleImpl.html
+¦   ¦   ¦       ¦   ¦                       ¦   package-summary.html
+¦   ¦   ¦       ¦   ¦                       ¦   package-tree.html
+¦   ¦   ¦       ¦   ¦                       ¦   package-use.html
+¦   ¦   ¦       ¦   ¦                       ¦   
+¦   ¦   ¦       ¦   ¦                       +--class-use
+¦   ¦   ¦       ¦   ¦                               LockHandleImpl.html
+¦   ¦   ¦       ¦   ¦                               
+¦   ¦   ¦       ¦   +--legal
+¦   ¦   ¦       ¦   ¦       ADDITIONAL_LICENSE_INFO
+¦   ¦   ¦       ¦   ¦       ASSEMBLY_EXCEPTION
+¦   ¦   ¦       ¦   ¦       jquery.md
+¦   ¦   ¦       ¦   ¦       jqueryUI.md
+¦   ¦   ¦       ¦   ¦       LICENSE
+¦   ¦   ¦       ¦   ¦       
+¦   ¦   ¦       ¦   +--resources
+¦   ¦   ¦       ¦   ¦       glass.png
+¦   ¦   ¦       ¦   ¦       x.png
+¦   ¦   ¦       ¦   ¦       
+¦   ¦   ¦       ¦   +--script-dir
+¦   ¦   ¦       ¦           jquery-3.6.1.min.js
+¦   ¦   ¦       ¦           jquery-ui.min.css
+¦   ¦   ¦       ¦           jquery-ui.min.js
+¦   ¦   ¦       ¦           
+¦   ¦   ¦       +--classes
+¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦       ¦       +--tsh
+¦   ¦   ¦       ¦           +--toolkit
+¦   ¦   ¦       ¦               +--common
+¦   ¦   ¦       ¦                   +--lock
+¦   ¦   ¦       ¦                       ¦   DistributedLockProvider.class
+¦   ¦   ¦       ¦                       ¦   LockHandle.class
+¦   ¦   ¦       ¦                       ¦   
+¦   ¦   ¦       ¦                       +--executor
+¦   ¦   ¦       ¦                       ¦   +--impl
+¦   ¦   ¦       ¦                       ¦           DistributedLockExecutor$LockCallback.class
+¦   ¦   ¦       ¦                       ¦           DistributedLockExecutor$LockResult.class
+¦   ¦   ¦       ¦                       ¦           DistributedLockExecutor$VoidLockCallback.class
+¦   ¦   ¦       ¦                       ¦           DistributedLockExecutor.class
+¦   ¦   ¦       ¦                       ¦           
+¦   ¦   ¦       ¦                       +--impl
+¦   ¦   ¦       ¦                               LockHandleImpl.class
+¦   ¦   ¦       ¦                               
+¦   ¦   ¦       +--generated-sources
+¦   ¦   ¦       ¦   +--annotations
+¦   ¦   ¦       +--generated-test-sources
+¦   ¦   ¦       ¦   +--test-annotations
+¦   ¦   ¦       +--javadoc-bundle-options
+¦   ¦   ¦       ¦       javadoc-options-javadoc-resources.xml
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--maven-archiver
+¦   ¦   ¦       ¦       pom.properties
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--maven-status
+¦   ¦   ¦       ¦   +--maven-compiler-plugin
+¦   ¦   ¦       ¦       +--compile
+¦   ¦   ¦       ¦       ¦   +--default-compile
+¦   ¦   ¦       ¦       ¦           createdFiles.lst
+¦   ¦   ¦       ¦       ¦           inputFiles.lst
+¦   ¦   ¦       ¦       ¦           
+¦   ¦   ¦       ¦       +--testCompile
+¦   ¦   ¦       ¦           +--default-testCompile
+¦   ¦   ¦       ¦                   createdFiles.lst
+¦   ¦   ¦       ¦                   inputFiles.lst
+¦   ¦   ¦       ¦                   
+¦   ¦   ¦       +--test-classes
+¦   ¦   +--lock-provider-inmemory
+¦   ¦   ¦   ¦   .checkstyle
+¦   ¦   ¦   ¦   .classpath
+¦   ¦   ¦   ¦   .factorypath
+¦   ¦   ¦   ¦   .project
+¦   ¦   ¦   ¦   pom.xml
+¦   ¦   ¦   ¦   
+¦   ¦   ¦   +--.settings
+¦   ¦   ¦   ¦       org.eclipse.core.resources.prefs
+¦   ¦   ¦   ¦       org.eclipse.jdt.apt.core.prefs
+¦   ¦   ¦   ¦       org.eclipse.jdt.core.prefs
+¦   ¦   ¦   ¦       org.eclipse.m2e.core.prefs
+¦   ¦   ¦   ¦       org.springframework.ide.eclipse.prefs
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +--src
+¦   ¦   ¦   ¦   +--main
+¦   ¦   ¦   ¦   ¦   +--java
+¦   ¦   ¦   ¦   ¦   ¦   +--com
+¦   ¦   ¦   ¦   ¦   ¦       +--platform
+¦   ¦   ¦   ¦   ¦   ¦           +--common
+¦   ¦   ¦   ¦   ¦   ¦               +--lock
+¦   ¦   ¦   ¦   ¦   ¦                   +--autoconfig
+¦   ¦   ¦   ¦   ¦   ¦                   ¦       InMemoryLockProviderConfiguration.java
+¦   ¦   ¦   ¦   ¦   ¦                   ¦       
+¦   ¦   ¦   ¦   ¦   ¦                   +--provider
+¦   ¦   ¦   ¦   ¦   ¦                       +--impl
+¦   ¦   ¦   ¦   ¦   ¦                               InMemoryLockProvider.java
+¦   ¦   ¦   ¦   ¦   ¦                               InMemoryLockProviderProperties.java
+¦   ¦   ¦   ¦   ¦   ¦                               
+¦   ¦   ¦   ¦   ¦   +--resources
+¦   ¦   ¦   ¦   ¦       +--META-INF
+¦   ¦   ¦   ¦   ¦           +--spring
+¦   ¦   ¦   ¦   ¦                   org.springframework.boot.autoconfigure.AutoConfiguration.imports
+¦   ¦   ¦   ¦   ¦                   
+¦   ¦   ¦   ¦   +--test
+¦   ¦   ¦   ¦       +--java
+¦   ¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦   ¦       ¦       +--platform
+¦   ¦   ¦   ¦       ¦           +--common
+¦   ¦   ¦   ¦       ¦               +--lock
+¦   ¦   ¦   ¦       ¦                   +--provider
+¦   ¦   ¦   ¦       ¦                       +--impl
+¦   ¦   ¦   ¦       ¦                               InMemoryLockProviderTest.java
+¦   ¦   ¦   ¦       ¦                               
+¦   ¦   ¦   ¦       +--resources
+¦   ¦   ¦   +--target
+¦   ¦   ¦       ¦   checkstyle-cachefile
+¦   ¦   ¦       ¦   checkstyle-checker.xml
+¦   ¦   ¦       ¦   checkstyle-result.xml
+¦   ¦   ¦       ¦   jacoco.exec
+¦   ¦   ¦       ¦   lock-provider-inmemory-0.0.1-SNAPSHOT-javadoc.jar
+¦   ¦   ¦       ¦   lock-provider-inmemory-0.0.1-SNAPSHOT-sources.jar
+¦   ¦   ¦       ¦   lock-provider-inmemory-0.0.1-SNAPSHOT.jar
+¦   ¦   ¦       ¦   maven-javadoc-plugin-stale-data.txt
+¦   ¦   ¦       ¦   
+¦   ¦   ¦       +--apidocs
+¦   ¦   ¦       ¦   ¦   allclasses-index.html
+¦   ¦   ¦       ¦   ¦   allpackages-index.html
+¦   ¦   ¦       ¦   ¦   copy.svg
+¦   ¦   ¦       ¦   ¦   element-list
+¦   ¦   ¦       ¦   ¦   help-doc.html
+¦   ¦   ¦       ¦   ¦   index-all.html
+¦   ¦   ¦       ¦   ¦   index.html
+¦   ¦   ¦       ¦   ¦   link.svg
+¦   ¦   ¦       ¦   ¦   member-search-index.js
+¦   ¦   ¦       ¦   ¦   module-search-index.js
+¦   ¦   ¦       ¦   ¦   overview-summary.html
+¦   ¦   ¦       ¦   ¦   overview-tree.html
+¦   ¦   ¦       ¦   ¦   package-search-index.js
+¦   ¦   ¦       ¦   ¦   script.js
+¦   ¦   ¦       ¦   ¦   search-page.js
+¦   ¦   ¦       ¦   ¦   search.html
+¦   ¦   ¦       ¦   ¦   search.js
+¦   ¦   ¦       ¦   ¦   stylesheet.css
+¦   ¦   ¦       ¦   ¦   tag-search-index.js
+¦   ¦   ¦       ¦   ¦   type-search-index.js
+¦   ¦   ¦       ¦   ¦   
+¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦       ¦   ¦   +--platform
+¦   ¦   ¦       ¦   ¦       +--common
+¦   ¦   ¦       ¦   ¦           +--lock
+¦   ¦   ¦       ¦   ¦               +--autoconfig
+¦   ¦   ¦       ¦   ¦               ¦   ¦   InMemoryLockProviderConfiguration.html
+¦   ¦   ¦       ¦   ¦               ¦   ¦   package-summary.html
+¦   ¦   ¦       ¦   ¦               ¦   ¦   package-tree.html
+¦   ¦   ¦       ¦   ¦               ¦   ¦   package-use.html
+¦   ¦   ¦       ¦   ¦               ¦   ¦   
+¦   ¦   ¦       ¦   ¦               ¦   +--class-use
+¦   ¦   ¦       ¦   ¦               ¦           InMemoryLockProviderConfiguration.html
+¦   ¦   ¦       ¦   ¦               ¦           
+¦   ¦   ¦       ¦   ¦               +--provider
+¦   ¦   ¦       ¦   ¦                   +--impl
+¦   ¦   ¦       ¦   ¦                       ¦   InMemoryLockProvider.html
+¦   ¦   ¦       ¦   ¦                       ¦   InMemoryLockProviderProperties.html
+¦   ¦   ¦       ¦   ¦                       ¦   package-summary.html
+¦   ¦   ¦       ¦   ¦                       ¦   package-tree.html
+¦   ¦   ¦       ¦   ¦                       ¦   package-use.html
+¦   ¦   ¦       ¦   ¦                       ¦   
+¦   ¦   ¦       ¦   ¦                       +--class-use
+¦   ¦   ¦       ¦   ¦                               InMemoryLockProvider.html
+¦   ¦   ¦       ¦   ¦                               InMemoryLockProviderProperties.html
+¦   ¦   ¦       ¦   ¦                               
+¦   ¦   ¦       ¦   +--legal
+¦   ¦   ¦       ¦   ¦       ADDITIONAL_LICENSE_INFO
+¦   ¦   ¦       ¦   ¦       ASSEMBLY_EXCEPTION
+¦   ¦   ¦       ¦   ¦       jquery.md
+¦   ¦   ¦       ¦   ¦       jqueryUI.md
+¦   ¦   ¦       ¦   ¦       LICENSE
+¦   ¦   ¦       ¦   ¦       
+¦   ¦   ¦       ¦   +--resources
+¦   ¦   ¦       ¦   ¦       glass.png
+¦   ¦   ¦       ¦   ¦       x.png
+¦   ¦   ¦       ¦   ¦       
+¦   ¦   ¦       ¦   +--script-dir
+¦   ¦   ¦       ¦           jquery-3.6.1.min.js
+¦   ¦   ¦       ¦           jquery-ui.min.css
+¦   ¦   ¦       ¦           jquery-ui.min.js
+¦   ¦   ¦       ¦           
+¦   ¦   ¦       +--classes
+¦   ¦   ¦       ¦   +--com
+¦   ¦   ¦       ¦   ¦   +--platform
+¦   ¦   ¦       ¦   ¦       +--common
+¦   ¦   ¦       ¦   ¦           +--lock
+¦   ¦   ¦       ¦   ¦               +--autoconfig
+¦   ¦   ¦       ¦   ¦               ¦       InMemoryLockProviderConfiguration.class
+¦   ¦   ¦       ¦   ¦               ¦       
+¦   ¦   ¦       ¦   ¦               +--provider
+¦   ¦   ¦       ¦   ¦                   +--impl
+¦   ¦   ¦       ¦   ¦                           InMemoryLockProvider.class
+¦   ¦   ¦       ¦   ¦                           InMemoryLockProviderProperties.class
+¦   ¦   ¦       ¦   ¦                           
+¦   ¦   ¦       ¦   +--META-INF
+¦   ¦   ¦       ¦       ¦   spring-configuration-metadata.json
+¦   ¦   ¦       ¦       ¦   
+¦   ¦   ¦       ¦       +--spring
+¦   ¦   ¦       ¦               org.springframework.boot.autoconfigure.AutoConfiguration.imports
+¦   ¦   ¦       ¦               
+¦   ¦   ¦       +--generated-sources
+¦   ¦   ¦       ¦   +--annotations
+¦   ¦   ¦       +--generated-test-sources
+¦   ¦   ¦       ¦   +--test-annotations
+¦   ¦   ¦       +--javadoc-bundle-options
+¦   ¦   ¦       ¦       javadoc-options-javadoc-resources.xml
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--maven-archiver
+¦   ¦   ¦       ¦       pom.properties
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--maven-status
+¦   ¦   ¦       ¦   +--maven-compiler-plugin
+¦   ¦   ¦       ¦       +--compile
+¦   ¦   ¦       ¦       ¦   +--default-compile
+¦   ¦   ¦       ¦       ¦           createdFiles.lst
+¦   ¦   ¦       ¦       ¦           inputFiles.lst
+¦   ¦   ¦       ¦       ¦           
+¦   ¦   ¦       ¦       +--testCompile
+¦   ¦   ¦       ¦           +--default-testCompile
+¦   ¦   ¦       ¦                   createdFiles.lst
+¦   ¦   ¦       ¦                   inputFiles.lst
+¦   ¦   ¦       ¦                   
+¦   ¦   ¦       +--site
+¦   ¦   ¦       ¦   +--jacoco
+¦   ¦   ¦       ¦       ¦   index.html
+¦   ¦   ¦       ¦       ¦   jacoco-sessions.html
+¦   ¦   ¦       ¦       ¦   jacoco.csv
+¦   ¦   ¦       ¦       ¦   jacoco.xml
+¦   ¦   ¦       ¦       ¦   
+¦   ¦   ¦       ¦       +--com.platform.common.lock.autoconfig
+¦   ¦   ¦       ¦       ¦       index.html
+¦   ¦   ¦       ¦       ¦       index.source.html
+¦   ¦   ¦       ¦       ¦       InMemoryLockProviderConfiguration.html
+¦   ¦   ¦       ¦       ¦       InMemoryLockProviderConfiguration.java.html
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +--com.platform.common.lock.provider.impl
+¦   ¦   ¦       ¦       ¦       index.html
+¦   ¦   ¦       ¦       ¦       index.source.html
+¦   ¦   ¦       ¦       ¦       InMemoryLockProvider.html
+¦   ¦   ¦       ¦       ¦       InMemoryLockProvider.java.html
+¦   ¦   ¦       ¦       ¦       InMemoryLockProviderProperties.html
+¦   ¦   ¦       ¦       ¦       InMemoryLockProviderProperties.java.html
+¦   ¦   ¦       ¦       ¦       
+¦   ¦   ¦       ¦       +--jacoco-resources
+¦   ¦   ¦       ¦               branchfc.gif
+¦   ¦   ¦       ¦               branchnc.gif
+¦   ¦   ¦       ¦               branchpc.gif
+¦   ¦   ¦       ¦               bundle.gif
+¦   ¦   ¦       ¦               class.gif
+¦   ¦   ¦       ¦               down.gif
+¦   ¦   ¦       ¦               greenbar.gif
+¦   ¦   ¦       ¦               group.gif
+¦   ¦   ¦       ¦               method.gif
+¦   ¦   ¦       ¦               package.gif
+¦   ¦   ¦       ¦               prettify.css
+¦   ¦   ¦       ¦               prettify.js
+¦   ¦   ¦       ¦               redbar.gif
+¦   ¦   ¦       ¦               report.css
+¦   ¦   ¦       ¦               report.gif
+¦   ¦   ¦       ¦               session.gif
+¦   ¦   ¦       ¦               sort.gif
+¦   ¦   ¦       ¦               sort.js
+¦   ¦   ¦       ¦               source.gif
+¦   ¦   ¦       ¦               up.gif
+¦   ¦   ¦       ¦               
+¦   ¦   ¦       +--surefire-reports
+¦   ¦   ¦       ¦       2025-12-15T10-12-37_071.dumpstream
+¦   ¦   ¦       ¦       com.platform.common.lock.provider.impl.InMemoryLockProviderTest.txt
+¦   ¦   ¦       ¦       TEST-com.platform.common.lock.provider.impl.InMemoryLockProviderTest.xml
+¦   ¦   ¦       ¦       
+¦   ¦   ¦       +--test-classes
+¦   ¦   ¦           +--com
+¦   ¦   ¦               +--platform
+¦   ¦   ¦                   +--common
+¦   ¦   ¦                       +--lock
+¦   ¦   ¦                           +--provider
+¦   ¦   ¦                               +--impl
+¦   ¦   ¦                                       InMemoryLockProviderTest$InMemoryLockProviderTestConfig.class
+¦   ¦   ¦                                       InMemoryLockProviderTest.class
+¦   ¦   ¦                                       
+¦   ¦   +--src
+¦   ¦   ¦   +--site
+¦   ¦   +--target
+¦   ¦           checkstyle-cachefile
+¦   ¦           checkstyle-checker.xml
+¦   ¦           checkstyle-result.xml
+¦   ¦           
+¦   +--src
+¦   ¦   +--site
+¦   +--target
+¦   ¦       checkstyle-cachefile
+¦   ¦       checkstyle-checker.xml
+¦   ¦       checkstyle-result.xml
+¦   ¦       
+¦   +--test-core
+¦   ¦   ¦   .checkstyle
+¦   ¦   ¦   .classpath
+¦   ¦   ¦   .factorypath
+¦   ¦   ¦   .project
+¦   ¦   ¦   pom.xml
+¦   ¦   ¦   README.md
+¦   ¦   ¦   
+¦   ¦   +--.settings
+¦   ¦   ¦       org.eclipse.core.resources.prefs
+¦   ¦   ¦       org.eclipse.jdt.apt.core.prefs
+¦   ¦   ¦       org.eclipse.jdt.core.prefs
+¦   ¦   ¦       org.eclipse.m2e.core.prefs
+¦   ¦   ¦       
+¦   ¦   +--src
+¦   ¦   ¦   +--main
+¦   ¦   ¦   ¦   +--java
+¦   ¦   ¦   ¦   ¦   +--com
+¦   ¦   ¦   ¦   ¦       +--tsh
+¦   ¦   ¦   ¦   ¦           +--toolkit
+¦   ¦   ¦   ¦   ¦               +--container
+¦   ¦   ¦   ¦   ¦               ¦   +--artemis
+¦   ¦   ¦   ¦   ¦               ¦   ¦       ArtemisContainerFactory.java
+¦   ¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦   ¦               ¦   +--etcd
+¦   ¦   ¦   ¦   ¦               ¦   ¦       EtcdTestContainer.java
+¦   ¦   ¦   ¦   ¦               ¦   ¦       EtcdTestContainerFactory.java
+¦   ¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦   ¦               ¦   +--kafka
+¦   ¦   ¦   ¦   ¦               ¦   ¦       ConfluentKafkaContainerFactory.java
+¦   ¦   ¦   ¦   ¦               ¦   ¦       
+¦   ¦   ¦   ¦   ¦               ¦   +--postgres
+¦   ¦   ¦   ¦   ¦               ¦           PostgreSqlContainerFactory.java
+¦   ¦   ¦   ¦   ¦               ¦           
+¦   ¦   ¦   ¦   ¦               +--containers
+¦   ¦   ¦   ¦   ¦               ¦       Containers.java
+¦   ¦   ¦   ¦   ¦               ¦       
+¦   ¦   ¦   ¦   ¦               +--dataset
+¦   ¦   ¦   ¦   ¦               ¦       Age.java
+¦   ¦   ¦   ¦   ¦               ¦       Capital.java
+¦   ¦   ¦   ¦   ¦               ¦       DataSet.java
+¦   ¦   ¦   ¦   ¦               ¦       DateOfBirth.java
+¦   ¦   ¦   ¦   ¦               ¦       Dependents.java
+¦   ¦   ¦   ¦   ¦               ¦       Gender.java
+¦   ¦   ¦   ¦   ¦               ¦       Name.java
+¦   ¦   ¦   ¦   ¦               ¦       People.java
+¦   ¦   ¦   ¦   ¦               ¦       Salary.java
+¦   ¦   ¦   ¦   ¦               ¦       
+¦   ¦   ¦   ¦   ¦               +--file
+¦   ¦   ¦   ¦   ¦                       TempDirUtils.java
+¦   ¦   ¦   ¦   ¦                       
+¦   ¦   ¦   ¦   +--resources
+¦   ¦   ¦   +--test
+¦   ¦   ¦       +--java
+¦   ¦   ¦       +--resources
+¦   ¦   +--target
+¦   ¦       ¦   checkstyle-cachefile
+¦   ¦       ¦   checkstyle-checker.xml
+¦   ¦       ¦   checkstyle-result.xml
+¦   ¦       ¦   maven-javadoc-plugin-stale-data.txt
+¦   ¦       ¦   test-core-0.0.1-SNAPSHOT-javadoc.jar
+¦   ¦       ¦   test-core-0.0.1-SNAPSHOT-sources.jar
+¦   ¦       ¦   test-core-0.0.1-SNAPSHOT.jar
+¦   ¦       ¦   
+¦   ¦       +--apidocs
+¦   ¦       ¦   ¦   allclasses-index.html
+¦   ¦       ¦   ¦   allpackages-index.html
+¦   ¦       ¦   ¦   constant-values.html
+¦   ¦       ¦   ¦   copy.svg
+¦   ¦       ¦   ¦   element-list
+¦   ¦       ¦   ¦   help-doc.html
+¦   ¦       ¦   ¦   index-all.html
+¦   ¦       ¦   ¦   index.html
+¦   ¦       ¦   ¦   link.svg
+¦   ¦       ¦   ¦   member-search-index.js
+¦   ¦       ¦   ¦   module-search-index.js
+¦   ¦       ¦   ¦   overview-summary.html
+¦   ¦       ¦   ¦   overview-tree.html
+¦   ¦       ¦   ¦   package-search-index.js
+¦   ¦       ¦   ¦   script.js
+¦   ¦       ¦   ¦   search-page.js
+¦   ¦       ¦   ¦   search.html
+¦   ¦       ¦   ¦   search.js
+¦   ¦       ¦   ¦   stylesheet.css
+¦   ¦       ¦   ¦   tag-search-index.js
+¦   ¦       ¦   ¦   type-search-index.js
+¦   ¦       ¦   ¦   
+¦   ¦       ¦   +--com
+¦   ¦       ¦   ¦   +--tsh
+¦   ¦       ¦   ¦       +--toolkit
+¦   ¦       ¦   ¦           +--container
+¦   ¦       ¦   ¦           ¦   +--artemis
+¦   ¦       ¦   ¦           ¦   ¦   ¦   ArtemisContainerFactory.html
+¦   ¦       ¦   ¦           ¦   ¦   ¦   package-summary.html
+¦   ¦       ¦   ¦           ¦   ¦   ¦   package-tree.html
+¦   ¦       ¦   ¦           ¦   ¦   ¦   package-use.html
+¦   ¦       ¦   ¦           ¦   ¦   ¦   
+¦   ¦       ¦   ¦           ¦   ¦   +--class-use
+¦   ¦       ¦   ¦           ¦   ¦           ArtemisContainerFactory.html
+¦   ¦       ¦   ¦           ¦   ¦           
+¦   ¦       ¦   ¦           ¦   +--etcd
+¦   ¦       ¦   ¦           ¦   ¦   ¦   EtcdTestContainer.html
+¦   ¦       ¦   ¦           ¦   ¦   ¦   EtcdTestContainerFactory.html
+¦   ¦       ¦   ¦           ¦   ¦   ¦   package-summary.html
+¦   ¦       ¦   ¦           ¦   ¦   ¦   package-tree.html
+¦   ¦       ¦   ¦           ¦   ¦   ¦   package-use.html
+¦   ¦       ¦   ¦           ¦   ¦   ¦   
+¦   ¦       ¦   ¦           ¦   ¦   +--class-use
+¦   ¦       ¦   ¦           ¦   ¦           EtcdTestContainer.html
+¦   ¦       ¦   ¦           ¦   ¦           EtcdTestContainerFactory.html
+¦   ¦       ¦   ¦           ¦   ¦           
+¦   ¦       ¦   ¦           ¦   +--kafka
+¦   ¦       ¦   ¦           ¦   ¦   ¦   ConfluentKafkaContainerFactory.html
+¦   ¦       ¦   ¦           ¦   ¦   ¦   package-summary.html
+¦   ¦       ¦   ¦           ¦   ¦   ¦   package-tree.html
+¦   ¦       ¦   ¦           ¦   ¦   ¦   package-use.html
+¦   ¦       ¦   ¦           ¦   ¦   ¦   
+¦   ¦       ¦   ¦           ¦   ¦   +--class-use
+¦   ¦       ¦   ¦           ¦   ¦           ConfluentKafkaContainerFactory.html
+¦   ¦       ¦   ¦           ¦   ¦           
+¦   ¦       ¦   ¦           ¦   +--postgres
+¦   ¦       ¦   ¦           ¦       ¦   package-summary.html
+¦   ¦       ¦   ¦           ¦       ¦   package-tree.html
+¦   ¦       ¦   ¦           ¦       ¦   package-use.html
+¦   ¦       ¦   ¦           ¦       ¦   PostgreSqlContainerFactory.html
+¦   ¦       ¦   ¦           ¦       ¦   
+¦   ¦       ¦   ¦           ¦       +--class-use
+¦   ¦       ¦   ¦           ¦               PostgreSqlContainerFactory.html
+¦   ¦       ¦   ¦           ¦               
+¦   ¦       ¦   ¦           +--containers
+¦   ¦       ¦   ¦           ¦   ¦   Containers.html
+¦   ¦       ¦   ¦           ¦   ¦   package-summary.html
+¦   ¦       ¦   ¦           ¦   ¦   package-tree.html
+¦   ¦       ¦   ¦           ¦   ¦   package-use.html
+¦   ¦       ¦   ¦           ¦   ¦   
+¦   ¦       ¦   ¦           ¦   +--class-use
+¦   ¦       ¦   ¦           ¦           Containers.html
+¦   ¦       ¦   ¦           ¦           
+¦   ¦       ¦   ¦           +--dataset
+¦   ¦       ¦   ¦           ¦   ¦   Age.html
+¦   ¦       ¦   ¦           ¦   ¦   Capital.CapitalCity.html
+¦   ¦       ¦   ¦           ¦   ¦   Capital.html
+¦   ¦       ¦   ¦           ¦   ¦   DataSet.html
+¦   ¦       ¦   ¦           ¦   ¦   DateOfBirth.Dob.html
+¦   ¦       ¦   ¦           ¦   ¦   DateOfBirth.html
+¦   ¦       ¦   ¦           ¦   ¦   Dependents.html
+¦   ¦       ¦   ¦           ¦   ¦   Gender.html
+¦   ¦       ¦   ¦           ¦   ¦   Name.Fullname.html
+¦   ¦       ¦   ¦           ¦   ¦   Name.html
+¦   ¦       ¦   ¦           ¦   ¦   package-summary.html
+¦   ¦       ¦   ¦           ¦   ¦   package-tree.html
+¦   ¦       ¦   ¦           ¦   ¦   package-use.html
+¦   ¦       ¦   ¦           ¦   ¦   People.html
+¦   ¦       ¦   ¦           ¦   ¦   People.Person.html
+¦   ¦       ¦   ¦           ¦   ¦   Salary.html
+¦   ¦       ¦   ¦           ¦   ¦   
+¦   ¦       ¦   ¦           ¦   +--class-use
+¦   ¦       ¦   ¦           ¦           Age.html
+¦   ¦       ¦   ¦           ¦           Capital.CapitalCity.html
+¦   ¦       ¦   ¦           ¦           Capital.html
+¦   ¦       ¦   ¦           ¦           DataSet.html
+¦   ¦       ¦   ¦           ¦           DateOfBirth.Dob.html
+¦   ¦       ¦   ¦           ¦           DateOfBirth.html
+¦   ¦       ¦   ¦           ¦           Dependents.html
+¦   ¦       ¦   ¦           ¦           Gender.html
+¦   ¦       ¦   ¦           ¦           Name.Fullname.html
+¦   ¦       ¦   ¦           ¦           Name.html
+¦   ¦       ¦   ¦           ¦           People.html
+¦   ¦       ¦   ¦           ¦           People.Person.html
+¦   ¦       ¦   ¦           ¦           Salary.html
+¦   ¦       ¦   ¦           ¦           
+¦   ¦       ¦   ¦           +--file
+¦   ¦       ¦   ¦               ¦   package-summary.html
+¦   ¦       ¦   ¦               ¦   package-tree.html
+¦   ¦       ¦   ¦               ¦   package-use.html
+¦   ¦       ¦   ¦               ¦   TempDirUtils.html
+¦   ¦       ¦   ¦               ¦   TempDirUtils.TempResource.html
+¦   ¦       ¦   ¦               ¦   
+¦   ¦       ¦   ¦               +--class-use
+¦   ¦       ¦   ¦                       TempDirUtils.html
+¦   ¦       ¦   ¦                       TempDirUtils.TempResource.html
+¦   ¦       ¦   ¦                       
+¦   ¦       ¦   +--legal
+¦   ¦       ¦   ¦       ADDITIONAL_LICENSE_INFO
+¦   ¦       ¦   ¦       ASSEMBLY_EXCEPTION
+¦   ¦       ¦   ¦       jquery.md
+¦   ¦       ¦   ¦       jqueryUI.md
+¦   ¦       ¦   ¦       LICENSE
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +--resources
+¦   ¦       ¦   ¦       glass.png
+¦   ¦       ¦   ¦       x.png
+¦   ¦       ¦   ¦       
+¦   ¦       ¦   +--script-dir
+¦   ¦       ¦           jquery-3.6.1.min.js
+¦   ¦       ¦           jquery-ui.min.css
+¦   ¦       ¦           jquery-ui.min.js
+¦   ¦       ¦           
+¦   ¦       +--classes
+¦   ¦       ¦   +--com
+¦   ¦       ¦       +--tsh
+¦   ¦       ¦           +--toolkit
+¦   ¦       ¦               +--container
+¦   ¦       ¦               ¦   +--artemis
+¦   ¦       ¦               ¦   ¦       ArtemisContainerFactory$1.class
+¦   ¦       ¦               ¦   ¦       ArtemisContainerFactory.class
+¦   ¦       ¦               ¦   ¦       
+¦   ¦       ¦               ¦   +--etcd
+¦   ¦       ¦               ¦   ¦       EtcdTestContainer.class
+¦   ¦       ¦               ¦   ¦       EtcdTestContainerFactory.class
+¦   ¦       ¦               ¦   ¦       
+¦   ¦       ¦               ¦   +--kafka
+¦   ¦       ¦               ¦   ¦       ConfluentKafkaContainerFactory.class
+¦   ¦       ¦               ¦   ¦       
+¦   ¦       ¦               ¦   +--postgres
+¦   ¦       ¦               ¦           PostgreSqlContainerFactory.class
+¦   ¦       ¦               ¦           
+¦   ¦       ¦               +--containers
+¦   ¦       ¦               ¦       Containers.class
+¦   ¦       ¦               ¦       
+¦   ¦       ¦               +--dataset
+¦   ¦       ¦               ¦       Age$1.class
+¦   ¦       ¦               ¦       Age.class
+¦   ¦       ¦               ¦       Capital$1.class
+¦   ¦       ¦               ¦       Capital$CapitalCity.class
+¦   ¦       ¦               ¦       Capital.class
+¦   ¦       ¦               ¦       DataSet.class
+¦   ¦       ¦               ¦       DateOfBirth$Dob.class
+¦   ¦       ¦               ¦       DateOfBirth.class
+¦   ¦       ¦               ¦       Dependents.class
+¦   ¦       ¦               ¦       Gender.class
+¦   ¦       ¦               ¦       Name$1.class
+¦   ¦       ¦               ¦       Name$Fullname.class
+¦   ¦       ¦               ¦       Name.class
+¦   ¦       ¦               ¦       People$Person.class
+¦   ¦       ¦               ¦       People.class
+¦   ¦       ¦               ¦       Salary.class
+¦   ¦       ¦               ¦       
+¦   ¦       ¦               +--file
+¦   ¦       ¦                       TempDirUtils$TempResource.class
+¦   ¦       ¦                       TempDirUtils.class
+¦   ¦       ¦                       
+¦   ¦       +--generated-sources
+¦   ¦       ¦   +--annotations
+¦   ¦       +--generated-test-sources
+¦   ¦       ¦   +--test-annotations
+¦   ¦       +--javadoc-bundle-options
+¦   ¦       ¦       javadoc-options-javadoc-resources.xml
+¦   ¦       ¦       
+¦   ¦       +--maven-archiver
+¦   ¦       ¦       pom.properties
+¦   ¦       ¦       
+¦   ¦       +--maven-status
+¦   ¦       ¦   +--maven-compiler-plugin
+¦   ¦       ¦       +--compile
+¦   ¦       ¦       ¦   +--default-compile
+¦   ¦       ¦       ¦           createdFiles.lst
+¦   ¦       ¦       ¦           inputFiles.lst
+¦   ¦       ¦       ¦           
+¦   ¦       ¦       +--testCompile
+¦   ¦       ¦           +--default-testCompile
+¦   ¦       ¦                   createdFiles.lst
+¦   ¦       ¦                   inputFiles.lst
+¦   ¦       ¦                   
+¦   ¦       +--test-classes
+¦   +--toolkit-core
+¦       ¦   .checkstyle
+¦       ¦   .classpath
+¦       ¦   .factorypath
+¦       ¦   .project
+¦       ¦   pom.xml
+¦       ¦   README.md
+¦       ¦   
+¦       +--.settings
+¦       ¦       org.eclipse.core.resources.prefs
+¦       ¦       org.eclipse.jdt.apt.core.prefs
+¦       ¦       org.eclipse.jdt.core.prefs
+¦       ¦       org.eclipse.m2e.core.prefs
+¦       ¦       org.springframework.ide.eclipse.prefs
+¦       ¦       
+¦       +--src
+¦       ¦   +--main
+¦       ¦   ¦   +--java
+¦       ¦   ¦   ¦   +--com
+¦       ¦   ¦   ¦       +--tsh
+¦       ¦   ¦   ¦           +--toolkit
+¦       ¦   ¦   ¦               +--core
+¦       ¦   ¦   ¦                   +--lifecycle
+¦       ¦   ¦   ¦                   ¦   ¦   LifecycleObject.java
+¦       ¦   ¦   ¦                   ¦   ¦   LifecycleObjectException.java
+¦       ¦   ¦   ¦                   ¦   ¦   LifecycleObjectStatusType.java
+¦       ¦   ¦   ¦                   ¦   ¦   
+¦       ¦   ¦   ¦                   ¦   +--impl
+¦       ¦   ¦   ¦                   ¦           AbstractLifecycleObject.java
+¦       ¦   ¦   ¦                   ¦           
+¦       ¦   ¦   ¦                   +--utils
+¦       ¦   ¦   ¦                           Check.java
+¦       ¦   ¦   ¦                           Maps.java
+¦       ¦   ¦   ¦                           Run.java
+¦       ¦   ¦   ¦                           ThreadPools.java
+¦       ¦   ¦   ¦                           Threads.java
+¦       ¦   ¦   ¦                           
+¦       ¦   ¦   +--resources
+¦       ¦   +--test
+¦       ¦       +--java
+¦       ¦       ¦   +--com
+¦       ¦       ¦       +--tsh
+¦       ¦       ¦           +--toolkit
+¦       ¦       ¦               +--core
+¦       ¦       ¦               ¦       CheckTest.java
+¦       ¦       ¦               ¦       MapsTest.java
+¦       ¦       ¦               ¦       RunTest.java
+¦       ¦       ¦               ¦       ThreadPoolsTest.java
+¦       ¦       ¦               ¦       ThreadsTest.java
+¦       ¦       ¦               ¦       
+¦       ¦       ¦               +--lifecycle
+¦       ¦       ¦                   +--impl
+¦       ¦       ¦                           AbstractLifecycleObjectTest.java
+¦       ¦       ¦                           
+¦       ¦       +--resources
+¦       +--target
+¦           ¦   checkstyle-cachefile
+¦           ¦   checkstyle-checker.xml
+¦           ¦   checkstyle-result.xml
+¦           ¦   jacoco.exec
+¦           ¦   maven-javadoc-plugin-stale-data.txt
+¦           ¦   toolkit-core-0.0.1-SNAPSHOT-javadoc.jar
+¦           ¦   toolkit-core-0.0.1-SNAPSHOT-sources.jar
+¦           ¦   toolkit-core-0.0.1-SNAPSHOT.jar
+¦           ¦   
+¦           +--apidocs
+¦           ¦   ¦   allclasses-index.html
+¦           ¦   ¦   allpackages-index.html
+¦           ¦   ¦   copy.svg
+¦           ¦   ¦   element-list
+¦           ¦   ¦   help-doc.html
+¦           ¦   ¦   index-all.html
+¦           ¦   ¦   index.html
+¦           ¦   ¦   link.svg
+¦           ¦   ¦   member-search-index.js
+¦           ¦   ¦   module-search-index.js
+¦           ¦   ¦   overview-summary.html
+¦           ¦   ¦   overview-tree.html
+¦           ¦   ¦   package-search-index.js
+¦           ¦   ¦   script.js
+¦           ¦   ¦   search-page.js
+¦           ¦   ¦   search.html
+¦           ¦   ¦   search.js
+¦           ¦   ¦   serialized-form.html
+¦           ¦   ¦   stylesheet.css
+¦           ¦   ¦   tag-search-index.js
+¦           ¦   ¦   type-search-index.js
+¦           ¦   ¦   
+¦           ¦   +--com
+¦           ¦   ¦   +--tsh
+¦           ¦   ¦       +--toolkit
+¦           ¦   ¦           +--core
+¦           ¦   ¦               +--lifecycle
+¦           ¦   ¦               ¦   ¦   LifecycleObject.html
+¦           ¦   ¦               ¦   ¦   LifecycleObjectException.html
+¦           ¦   ¦               ¦   ¦   LifecycleObjectStatusType.html
+¦           ¦   ¦               ¦   ¦   package-summary.html
+¦           ¦   ¦               ¦   ¦   package-tree.html
+¦           ¦   ¦               ¦   ¦   package-use.html
+¦           ¦   ¦               ¦   ¦   
+¦           ¦   ¦               ¦   +--class-use
+¦           ¦   ¦               ¦   ¦       LifecycleObject.html
+¦           ¦   ¦               ¦   ¦       LifecycleObjectException.html
+¦           ¦   ¦               ¦   ¦       LifecycleObjectStatusType.html
+¦           ¦   ¦               ¦   ¦       
+¦           ¦   ¦               ¦   +--impl
+¦           ¦   ¦               ¦       ¦   AbstractLifecycleObject.html
+¦           ¦   ¦               ¦       ¦   AbstractLifecycleObject.LifecycleRunnable.html
+¦           ¦   ¦               ¦       ¦   package-summary.html
+¦           ¦   ¦               ¦       ¦   package-tree.html
+¦           ¦   ¦               ¦       ¦   package-use.html
+¦           ¦   ¦               ¦       ¦   
+¦           ¦   ¦               ¦       +--class-use
+¦           ¦   ¦               ¦               AbstractLifecycleObject.html
+¦           ¦   ¦               ¦               AbstractLifecycleObject.LifecycleRunnable.html
+¦           ¦   ¦               ¦               
+¦           ¦   ¦               +--utils
+¦           ¦   ¦                   ¦   Check.html
+¦           ¦   ¦                   ¦   Maps.html
+¦           ¦   ¦                   ¦   Maps.MapDefaultValueSupplier.html
+¦           ¦   ¦                   ¦   package-summary.html
+¦           ¦   ¦                   ¦   package-tree.html
+¦           ¦   ¦                   ¦   package-use.html
+¦           ¦   ¦                   ¦   Run.html
+¦           ¦   ¦                   ¦   Run.RunConsumer.html
+¦           ¦   ¦                   ¦   Run.RunFunction.html
+¦           ¦   ¦                   ¦   Run.RunRunable.html
+¦           ¦   ¦                   ¦   Run.RunSupplier.html
+¦           ¦   ¦                   ¦   ThreadPools.html
+¦           ¦   ¦                   ¦   Threads.html
+¦           ¦   ¦                   ¦   
+¦           ¦   ¦                   +--class-use
+¦           ¦   ¦                           Check.html
+¦           ¦   ¦                           Maps.html
+¦           ¦   ¦                           Maps.MapDefaultValueSupplier.html
+¦           ¦   ¦                           Run.html
+¦           ¦   ¦                           Run.RunConsumer.html
+¦           ¦   ¦                           Run.RunFunction.html
+¦           ¦   ¦                           Run.RunRunable.html
+¦           ¦   ¦                           Run.RunSupplier.html
+¦           ¦   ¦                           ThreadPools.html
+¦           ¦   ¦                           Threads.html
+¦           ¦   ¦                           
+¦           ¦   +--legal
+¦           ¦   ¦       ADDITIONAL_LICENSE_INFO
+¦           ¦   ¦       ASSEMBLY_EXCEPTION
+¦           ¦   ¦       jquery.md
+¦           ¦   ¦       jqueryUI.md
+¦           ¦   ¦       LICENSE
+¦           ¦   ¦       
+¦           ¦   +--resources
+¦           ¦   ¦       glass.png
+¦           ¦   ¦       x.png
+¦           ¦   ¦       
+¦           ¦   +--script-dir
+¦           ¦           jquery-3.6.1.min.js
+¦           ¦           jquery-ui.min.css
+¦           ¦           jquery-ui.min.js
+¦           ¦           
+¦           +--classes
+¦           ¦   +--com
+¦           ¦       +--tsh
+¦           ¦           +--toolkit
+¦           ¦               +--core
+¦           ¦                   +--lifecycle
+¦           ¦                   ¦   ¦   LifecycleObject.class
+¦           ¦                   ¦   ¦   LifecycleObjectException.class
+¦           ¦                   ¦   ¦   LifecycleObjectStatusType.class
+¦           ¦                   ¦   ¦   
+¦           ¦                   ¦   +--impl
+¦           ¦                   ¦           AbstractLifecycleObject$LifecycleRunnable.class
+¦           ¦                   ¦           AbstractLifecycleObject.class
+¦           ¦                   ¦           
+¦           ¦                   +--utils
+¦           ¦                           Check.class
+¦           ¦                           Maps$MapDefaultValueSupplier.class
+¦           ¦                           Maps.class
+¦           ¦                           Run$RunConsumer.class
+¦           ¦                           Run$RunFunction.class
+¦           ¦                           Run$RunRunable.class
+¦           ¦                           Run$RunSupplier.class
+¦           ¦                           Run.class
+¦           ¦                           ThreadPools$PoolAction.class
+¦           ¦                           ThreadPools.class
+¦           ¦                           Threads.class
+¦           ¦                           
+¦           +--generated-sources
+¦           ¦   +--annotations
+¦           +--generated-test-sources
+¦           ¦   +--test-annotations
+¦           +--javadoc-bundle-options
+¦           ¦       javadoc-options-javadoc-resources.xml
+¦           ¦       
+¦           +--maven-archiver
+¦           ¦       pom.properties
+¦           ¦       
+¦           +--maven-status
+¦           ¦   +--maven-compiler-plugin
+¦           ¦       +--compile
+¦           ¦       ¦   +--default-compile
+¦           ¦       ¦           createdFiles.lst
+¦           ¦       ¦           inputFiles.lst
+¦           ¦       ¦           
+¦           ¦       +--testCompile
+¦           ¦           +--default-testCompile
+¦           ¦                   createdFiles.lst
+¦           ¦                   inputFiles.lst
+¦           ¦                   
+¦           +--site
+¦           ¦   +--jacoco
+¦           ¦       ¦   index.html
+¦           ¦       ¦   jacoco-sessions.html
+¦           ¦       ¦   jacoco.csv
+¦           ¦       ¦   jacoco.xml
+¦           ¦       ¦   
+¦           ¦       +--com.tsh.toolkit.core.lifecycle
+¦           ¦       ¦       index.html
+¦           ¦       ¦       index.source.html
+¦           ¦       ¦       LifecycleObjectException.html
+¦           ¦       ¦       LifecycleObjectException.java.html
+¦           ¦       ¦       LifecycleObjectStatusType.html
+¦           ¦       ¦       LifecycleObjectStatusType.java.html
+¦           ¦       ¦       
+¦           ¦       +--com.tsh.toolkit.core.lifecycle.impl
+¦           ¦       ¦       AbstractLifecycleObject.html
+¦           ¦       ¦       AbstractLifecycleObject.java.html
+¦           ¦       ¦       index.html
+¦           ¦       ¦       index.source.html
+¦           ¦       ¦       
+¦           ¦       +--com.tsh.toolkit.core.utils
+¦           ¦       ¦       Check.html
+¦           ¦       ¦       Check.java.html
+¦           ¦       ¦       index.html
+¦           ¦       ¦       index.source.html
+¦           ¦       ¦       Maps.html
+¦           ¦       ¦       Maps.java.html
+¦           ¦       ¦       Run.html
+¦           ¦       ¦       Run.java.html
+¦           ¦       ¦       ThreadPools.html
+¦           ¦       ¦       ThreadPools.java.html
+¦           ¦       ¦       Threads.html
+¦           ¦       ¦       Threads.java.html
+¦           ¦       ¦       
+¦           ¦       +--jacoco-resources
+¦           ¦               branchfc.gif
+¦           ¦               branchnc.gif
+¦           ¦               branchpc.gif
+¦           ¦               bundle.gif
+¦           ¦               class.gif
+¦           ¦               down.gif
+¦           ¦               greenbar.gif
+¦           ¦               group.gif
+¦           ¦               method.gif
+¦           ¦               package.gif
+¦           ¦               prettify.css
+¦           ¦               prettify.js
+¦           ¦               redbar.gif
+¦           ¦               report.css
+¦           ¦               report.gif
+¦           ¦               session.gif
+¦           ¦               sort.gif
+¦           ¦               sort.js
+¦           ¦               source.gif
+¦           ¦               up.gif
+¦           ¦               
+¦           +--surefire-reports
+¦           ¦       2025-12-15T10-12-37_071.dumpstream
+¦           ¦       com.tsh.toolkit.core.CheckTest.txt
+¦           ¦       com.tsh.toolkit.core.MapsTest.txt
+¦           ¦       com.tsh.toolkit.core.RunTest.txt
+¦           ¦       com.tsh.toolkit.core.ThreadPoolsTest.txt
+¦           ¦       com.tsh.toolkit.core.ThreadsTest.txt
+¦           ¦       com.tsh.toolkit.lifecycle.impl.AbstractLifecycleObjectTest.txt
+¦           ¦       TEST-com.tsh.toolkit.core.CheckTest.xml
+¦           ¦       TEST-com.tsh.toolkit.core.MapsTest.xml
+¦           ¦       TEST-com.tsh.toolkit.core.RunTest.xml
+¦           ¦       TEST-com.tsh.toolkit.core.ThreadPoolsTest.xml
+¦           ¦       TEST-com.tsh.toolkit.core.ThreadsTest.xml
+¦           ¦       TEST-com.tsh.toolkit.lifecycle.impl.AbstractLifecycleObjectTest.xml
+¦           ¦       
+¦           +--test-classes
+¦               +--com
+¦                   +--tsh
+¦                       +--toolkit
+¦                           +--core
+¦                           ¦       CheckTest.class
+¦                           ¦       MapsTest.class
+¦                           ¦       RunTest.class
+¦                           ¦       ThreadPoolsTest.class
+¦                           ¦       ThreadsTest.class
+¦                           ¦       
+¦                           +--lifecycle
+¦                               +--impl
+¦                                       AbstractLifecycleObjectTest$TestLifecycleObject.class
+¦                                       AbstractLifecycleObjectTest.class
+¦                                       
++--src
+¦   +--site
++--target
+        checkstyle-cachefile
+        checkstyle-checker.xml
+        checkstyle-result.xml
+        
