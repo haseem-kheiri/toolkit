@@ -126,6 +126,21 @@ public class JsonCodec implements Codec {
   }
 
   /**
+   * Serializes the given Java object into its JSON string representation.
+   *
+   * @param obj the object to serialize; may be {@code null}
+   * @return the JSON-encoded byte array
+   * @throws CodecException if serialization fails
+   */
+  public String encodeToString(Object obj) throws CodecException {
+    try {
+      return objectMapper.writeValueAsString(obj);
+    } catch (JsonProcessingException e) {
+      throw new CodecException("Failed to encode object to JSON", e);
+    }
+  }
+
+  /**
    * Deserializes the given JSON byte array into an object of the specified type.
    *
    * <p>Supports both simple and parameterized types through {@link ObjectType}, enabling decoding
@@ -146,6 +161,46 @@ public class JsonCodec implements Codec {
     if (encoded == null) {
       throw new CodecException(
           "Cannot decode from a null byte array", new IOException("Input byte array is null"));
+    }
+    if (type == null) {
+      throw new CodecException(
+          "Cannot decode without a target type", new IOException("ObjectType is null"));
+    }
+
+    try {
+      return objectMapper.readValue(
+          encoded,
+          new TypeReference<T>() {
+            @Override
+            public Type getType() {
+              return type.getType();
+            }
+          });
+    } catch (IOException e) {
+      throw new CodecException("Failed to decode JSON to object", e);
+    }
+  }
+
+  /**
+   * Deserializes the given JSON string into an object of the specified type.
+   *
+   * <p>Supports both simple and parameterized types through {@link ObjectType}, enabling decoding
+   * of complex generic structures (e.g., {@code List<Map<String, Integer>>}).
+   *
+   * <p>Both {@code encoded} and {@code type} must be non-null. A {@link CodecException} is thrown
+   * if either is {@code null} or if the JSON cannot be parsed into the target type.
+   *
+   * @param encoded the JSON-encoded string; must not be {@code null}
+   * @param type the {@link ObjectType} representing the target type to decode into; must not be
+   *     {@code null}
+   * @param <T> the generic type of the decoded object
+   * @return the decoded object instance
+   * @throws CodecException if deserialization fails or if the input cannot be parsed
+   */
+  public <T> T decodeFromString(String encoded, ObjectType<T> type) throws CodecException {
+    if (encoded == null) {
+      throw new CodecException(
+          "Cannot decode from a null string", new IOException("Input string is null"));
     }
     if (type == null) {
       throw new CodecException(

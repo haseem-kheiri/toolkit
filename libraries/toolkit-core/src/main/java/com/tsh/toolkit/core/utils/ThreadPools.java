@@ -15,7 +15,9 @@
 package com.tsh.toolkit.core.utils;
 
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 import lombok.extern.slf4j.Slf4j;
@@ -59,6 +61,77 @@ public final class ThreadPools {
       log.warn("Executor shutdown interrupted", e);
       Thread.currentThread().interrupt(); // restore interrupted status
     }
+  }
+
+  /**
+   * Creates a bounded, elastic {@link ThreadPoolExecutor} with core thread timeout enabled.
+   *
+   * <p>The executor scales between {@code corePoolSize} and {@code maxPoolSize}, uses a bounded
+   * queue for backpressure, and allows all threads (including core threads) to terminate when idle.
+   *
+   * <p>Defaults:
+   *
+   * <ul>
+   *   <li>Keep-alive time: 60 seconds
+   *   <li>Queue capacity: 5
+   * </ul>
+   *
+   * @param corePoolSize number of threads to keep under steady load
+   * @param maxPoolSize maximum number of threads allowed
+   * @return a configured {@link ThreadPoolExecutor}
+   */
+  public static ThreadPoolExecutor createBoundedElasticThreadPool(
+      int corePoolSize, int maxPoolSize) {
+    return createBoundedElasticThreadPool(corePoolSize, maxPoolSize, 60L, TimeUnit.SECONDS);
+  }
+
+  /**
+   * Creates a bounded, elastic {@link ThreadPoolExecutor} with a custom keep-alive time.
+   *
+   * <p>Defaults:
+   *
+   * <ul>
+   *   <li>Queue capacity: 5
+   * </ul>
+   *
+   * @param corePoolSize number of threads to keep under steady load
+   * @param maxPoolSize maximum number of threads allowed
+   * @param keepAliveTime time idle threads wait before terminating
+   * @param unit time unit for {@code keepAliveTime}
+   * @return a configured {@link ThreadPoolExecutor}
+   */
+  public static ThreadPoolExecutor createBoundedElasticThreadPool(
+      int corePoolSize, int maxPoolSize, long keepAliveTime, TimeUnit unit) {
+    return createBoundedElasticThreadPool(corePoolSize, maxPoolSize, keepAliveTime, unit, 5);
+  }
+
+  /**
+   * Creates a fully configurable bounded, elastic {@link ThreadPoolExecutor}.
+   *
+   * <p>Tasks are rejected with {@link java.util.concurrent.RejectedExecutionException} when both
+   * the thread limit and queue capacity are exhausted.
+   *
+   * @param corePoolSize number of threads to keep under steady load
+   * @param maxPoolSize maximum number of threads allowed
+   * @param keepAliveTime time idle threads wait before terminating
+   * @param unit time unit for {@code keepAliveTime}
+   * @param capacity maximum number of queued tasks
+   * @return a configured {@link ThreadPoolExecutor}
+   * @throws IllegalArgumentException if pool size configuration is invalid
+   */
+  public static ThreadPoolExecutor createBoundedElasticThreadPool(
+      int corePoolSize, int maxPoolSize, long keepAliveTime, TimeUnit unit, int capacity) {
+
+    if (corePoolSize < 0 || maxPoolSize <= 0 || corePoolSize > maxPoolSize) {
+      throw new IllegalArgumentException("Invalid pool size configuration");
+    }
+
+    ThreadPoolExecutor tpe =
+        new ThreadPoolExecutor(
+            corePoolSize, maxPoolSize, keepAliveTime, unit, new LinkedBlockingQueue<>(capacity));
+
+    tpe.allowCoreThreadTimeOut(true);
+    return tpe;
   }
 
   /**

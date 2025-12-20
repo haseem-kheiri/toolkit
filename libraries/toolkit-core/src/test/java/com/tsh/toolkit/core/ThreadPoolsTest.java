@@ -14,6 +14,7 @@
 
 package com.tsh.toolkit.core;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
@@ -25,8 +26,12 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import com.tsh.toolkit.core.utils.ThreadPools;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Supplier;
@@ -132,5 +137,107 @@ class ThreadPoolsTest {
         IllegalArgumentException.class, () -> ThreadPools.execute(null, () -> true, executor));
     assertThrows(IllegalArgumentException.class, () -> ThreadPools.execute(task, null, executor));
     assertThrows(IllegalArgumentException.class, () -> ThreadPools.execute(task, () -> true, null));
+  }
+
+  @Test
+  void shouldRejectInvalidPoolSizes() {
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> ThreadPools.createBoundedElasticThreadPool(-1, 1, 1, TimeUnit.SECONDS, 10));
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> ThreadPools.createBoundedElasticThreadPool(2, 1, 1, TimeUnit.SECONDS, 10));
+
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> ThreadPools.createBoundedElasticThreadPool(1, 0, 1, TimeUnit.SECONDS, 10));
+  }
+
+  @Test
+  void shouldCreateExecutorWithBoundedQueue() {
+    ThreadPoolExecutor executor =
+        ThreadPools.createBoundedElasticThreadPool(1, 2, 10, TimeUnit.SECONDS, 5);
+
+    BlockingQueue<Runnable> queue = executor.getQueue();
+
+    assertTrue(queue instanceof LinkedBlockingQueue);
+    assertEquals(5, queue.remainingCapacity());
+
+    executor.shutdownNow();
+  }
+
+  @Test
+  void shouldConfigureCoreAndMaxPoolSizes() {
+    ThreadPoolExecutor executor =
+        ThreadPools.createBoundedElasticThreadPool(2, 4, 30, TimeUnit.SECONDS, 10);
+
+    assertEquals(2, executor.getCorePoolSize());
+    assertEquals(4, executor.getMaximumPoolSize());
+
+    executor.shutdownNow();
+  }
+
+  @Test
+  void shouldAllowCoreThreadTimeout() {
+    ThreadPoolExecutor executor =
+        ThreadPools.createBoundedElasticThreadPool(1, 1, 1, TimeUnit.SECONDS, 10);
+
+    assertTrue(executor.allowsCoreThreadTimeOut());
+
+    executor.shutdownNow();
+  }
+
+  @Test
+  void shouldExpandUpToMaxPoolSizeWhenQueueIsFull() throws Exception {
+    ThreadPoolExecutor executor =
+        ThreadPools.createBoundedElasticThreadPool(1, 2, 60, TimeUnit.SECONDS, 1);
+
+    CountDownLatch latch = new CountDownLatch(1);
+
+    // First task occupies core thread
+    executor.execute(() -> await(latch));
+
+    // Second task fills queue
+    executor.execute(() -> await(latch));
+
+    // Third task forces expansion to maxPoolSize
+    executor.execute(() -> await(latch));
+
+    // Allow threads to start
+    Thread.sleep(100);
+
+    assertEquals(2, executor.getPoolSize());
+
+    latch.countDown();
+    executor.shutdownNow();
+  }
+
+  @Test
+  void shouldRejectTasksWhenPoolAndQueueAreSaturated() throws Exception {
+    ThreadPoolExecutor executor =
+        ThreadPools.createBoundedElasticThreadPool(1, 1, 60, TimeUnit.SECONDS, 1);
+
+    CountDownLatch latch = new CountDownLatch(1);
+
+    // Occupy core thread
+    executor.execute(() -> await(latch));
+
+    // Fill queue
+    executor.execute(() -> await(latch));
+
+    // Saturated: next task must be rejected
+    assertThrows(RejectedExecutionException.class, () -> executor.execute(() -> {}));
+
+    latch.countDown();
+    executor.shutdownNow();
+  }
+
+  private static void await(CountDownLatch latch) {
+    try {
+      latch.await();
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+    }
   }
 }

@@ -48,6 +48,10 @@ class JsonCodecTest {
     byte[] encoded = codec.encode(original);
     String decoded = codec.decode(encoded, new ObjectType<String>() {});
     Assertions.assertEquals(original, decoded);
+
+    String encodedStr = codec.encodeToString(original);
+    String decodedStr = codec.decodeFromString(encodedStr, new ObjectType<String>() {});
+    Assertions.assertEquals(original, decodedStr);
   }
 
   @Test
@@ -57,15 +61,27 @@ class JsonCodecTest {
     List<Map<String, Integer>> decoded =
         codec.decode(encoded, new ObjectType<List<Map<String, Integer>>>() {});
     Assertions.assertEquals(original, decoded);
+
+    String encodedStr = codec.encodeToString(original);
+    List<Map<String, Integer>> decodedStr =
+        codec.decodeFromString(encodedStr, new ObjectType<List<Map<String, Integer>>>() {});
+    Assertions.assertEquals(original, decoded);
   }
 
   @Test
   void testDecodeInvalidJsonThrowsException() {
-    byte[] invalidJson = "{invalid}".getBytes();
+    String invalidJsonStr = "{invalid}";
+    byte[] invalidJson = invalidJsonStr.getBytes();
     CodecException ex =
         Assertions.assertThrows(
             CodecException.class,
             () -> codec.decode(invalidJson, new ObjectType<Map<String, String>>() {}));
+    Assertions.assertTrue(ex.getMessage().contains("decode"));
+
+    ex =
+        Assertions.assertThrows(
+            CodecException.class,
+            () -> codec.decodeFromString(invalidJsonStr, new ObjectType<Map<String, String>>() {}));
     Assertions.assertTrue(ex.getMessage().contains("decode"));
   }
 
@@ -73,12 +89,17 @@ class JsonCodecTest {
   void testEncodeNullValue() {
     byte[] encoded = codec.encode(null);
     Assertions.assertEquals("null", new String(encoded));
+    String encodedStr = codec.encodeToString(null);
+    Assertions.assertEquals("null", encodedStr);
   }
 
   @Test
   void testDecodeEmptyJson() {
-    byte[] emptyJson = "{}".getBytes();
+    String emptyJsonString = "{}";
+    byte[] emptyJson = emptyJsonString.getBytes();
     Map<String, Object> decoded = codec.decode(emptyJson, new ObjectType<Map<String, Object>>() {});
+    Assertions.assertTrue(decoded.isEmpty());
+    decoded = codec.decodeFromString(emptyJsonString, new ObjectType<Map<String, Object>>() {});
     Assertions.assertTrue(decoded.isEmpty());
   }
 
@@ -116,5 +137,14 @@ class JsonCodecTest {
     CodecException ex2 =
         Assertions.assertThrows(CodecException.class, () -> codec.decode("{}".getBytes(), null));
     Assertions.assertInstanceOf(IOException.class, ex2.getCause());
+
+    CodecException ex3 =
+        Assertions.assertThrows(
+            CodecException.class, () -> codec.decodeFromString(null, new ObjectType<>() {}));
+    Assertions.assertInstanceOf(IOException.class, ex3.getCause());
+
+    CodecException ex4 =
+        Assertions.assertThrows(CodecException.class, () -> codec.decodeFromString("{}", null));
+    Assertions.assertInstanceOf(IOException.class, ex4.getCause());
   }
 }

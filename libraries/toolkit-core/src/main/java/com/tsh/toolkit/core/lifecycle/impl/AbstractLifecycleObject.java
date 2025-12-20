@@ -22,7 +22,6 @@ import com.tsh.toolkit.core.utils.ThreadPools;
 import com.tsh.toolkit.core.utils.Threads;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Supplier;
 import lombok.extern.slf4j.Slf4j;
 
 /** Abstract life-cycle object. */
@@ -31,7 +30,7 @@ public abstract class AbstractLifecycleObject implements LifecycleObject {
   /** Life-cycle runnable code block. */
   @FunctionalInterface
   public interface LifecycleRunnable<E extends Exception> {
-    void run(Supplier<Boolean> isRunning) throws E;
+    void run(boolean isRunning) throws E;
   }
 
   private final Object mutex = new Object();
@@ -43,15 +42,16 @@ public abstract class AbstractLifecycleObject implements LifecycleObject {
         mutex,
         () -> !isRunning(),
         () -> {
-          try {
-            status = LifecycleObjectStatusType.UP;
-            onStart();
-          } catch (Exception e) {
-            log.warn("Unexpected error in startup.", e);
-            close();
-            throw new LifecycleObjectException("Start up failed.", e);
-          }
+          status = LifecycleObjectStatusType.UP;
         });
+    try {
+
+      onStart();
+    } catch (Exception e) {
+      log.warn("Unexpected error in startup.", e);
+      close();
+      throw new LifecycleObjectException("Start up failed.", e);
+    }
   }
 
   protected abstract void onStart();
@@ -68,12 +68,12 @@ public abstract class AbstractLifecycleObject implements LifecycleObject {
         () -> isRunning(),
         () -> {
           status = LifecycleObjectStatusType.DOWN;
-          try {
-            onStop();
-          } catch (Exception e) {
-            log.warn("Unexpected error in shutdown.", e);
-          }
         });
+    try {
+      onStop();
+    } catch (Exception e) {
+      log.warn("Unexpected error in shutdown.", e);
+    }
   }
 
   protected abstract void onStop();
@@ -86,7 +86,7 @@ public abstract class AbstractLifecycleObject implements LifecycleObject {
       LifecycleRunnable<E> block, long duration, TimeUnit unit) {
     while (isRunning()) {
       try {
-        block.run(() -> isRunning());
+        block.run(isRunning());
       } catch (Exception e) {
         log.warn("Error in execution", e);
       }
