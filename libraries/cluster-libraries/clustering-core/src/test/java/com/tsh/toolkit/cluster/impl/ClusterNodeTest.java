@@ -14,7 +14,8 @@
 
 package com.tsh.toolkit.cluster.impl;
 
-import com.tsh.toolkit.cluster.coordinator.impl.PostgresClusterCoordinator;
+import com.tsh.toolkit.cluster.ClusterCoordinator;
+import com.tsh.toolkit.cluster.ClusterState;
 import java.time.Duration;
 import java.util.Map;
 import org.junit.jupiter.api.Assertions;
@@ -24,6 +25,18 @@ class ClusterNodeTest {
 
   @Test
   void test() {
+    final ClusterCoordinator cc =
+        new ClusterCoordinator() {
+          @Override
+          public ClusterState participateAndObserve(
+              String clusterName,
+              String sessionId,
+              Map<String, String> metadata,
+              long heartbeatTimeoutMillis) {
+            // TODO Auto-generated method stub
+            return null;
+          }
+        };
     Assertions.assertEquals(
         "node id must not be blank.",
         Assertions.assertThrows(
@@ -51,15 +64,7 @@ class ClusterNodeTest {
         "heartbeat interval must be at least 1 second.",
         Assertions.assertThrows(
                 IllegalArgumentException.class,
-                () ->
-                    new ClusterNode(
-                        nodeId,
-                        clusterName,
-                        new PostgresClusterCoordinator(null, null),
-                        null,
-                        null,
-                        null,
-                        null))
+                () -> new ClusterNode(nodeId, clusterName, cc, null, null, null, null))
             .getLocalizedMessage());
 
     Assertions.assertEquals(
@@ -68,13 +73,16 @@ class ClusterNodeTest {
                 IllegalArgumentException.class,
                 () ->
                     new ClusterNode(
-                        nodeId,
-                        clusterName,
-                        new PostgresClusterCoordinator(null, null),
-                        Duration.ofMillis(1),
-                        null,
-                        null,
-                        null))
+                        nodeId, clusterName, cc, Duration.ofMillis(1), null, null, null))
+            .getLocalizedMessage());
+
+    Assertions.assertEquals(
+        "heartbeat timeout must be at least three times the heartbeat interval.",
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () ->
+                    new ClusterNode(
+                        nodeId, clusterName, cc, Duration.ofMillis(1000), null, null, null))
             .getLocalizedMessage());
 
     Assertions.assertEquals(
@@ -85,22 +93,7 @@ class ClusterNodeTest {
                     new ClusterNode(
                         nodeId,
                         clusterName,
-                        new PostgresClusterCoordinator(null, null),
-                        Duration.ofMillis(1000),
-                        null,
-                        null,
-                        null))
-            .getLocalizedMessage());
-
-    Assertions.assertEquals(
-        "heartbeat timeout must be at least three times the heartbeat interval.",
-        Assertions.assertThrows(
-                IllegalArgumentException.class,
-                () ->
-                    new ClusterNode(
-                        nodeId,
-                        clusterName,
-                        new PostgresClusterCoordinator(null, null),
+                        cc,
                         Duration.ofMillis(1000),
                         Duration.ofMillis(1000),
                         null,
@@ -115,25 +108,26 @@ class ClusterNodeTest {
                     new ClusterNode(
                         nodeId,
                         clusterName,
-                        new PostgresClusterCoordinator(null, null),
+                        cc,
                         Duration.ofMillis(1000),
                         Duration.ofMillis(3000),
                         null,
                         null))
             .getLocalizedMessage());
 
-    ClusterNode n =
+    try (ClusterNode n =
         new ClusterNode(
             nodeId,
             clusterName,
-            new PostgresClusterCoordinator(null, null),
+            cc,
             Duration.ofMillis(1000),
             Duration.ofMillis(3000),
             Map.of(),
-            null);
+            null)) {
 
-    Assertions.assertEquals(clusterName, n.getClusterName());
-    Assertions.assertEquals(nodeId, n.getNodeId());
-    Assertions.assertTrue(n.isHealthy());
+      Assertions.assertEquals(clusterName, n.getClusterName());
+      Assertions.assertEquals(nodeId, n.getNodeId());
+      Assertions.assertTrue(n.isHealthy());
+    }
   }
 }

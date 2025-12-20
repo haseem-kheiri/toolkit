@@ -9,5 +9,6 @@
   <packaging>pom</packaging>
   <modules>
     <module>clustering-core</module>
+    <module>clustering-coordinator-postgresql</module>
   </modules>
 </project>

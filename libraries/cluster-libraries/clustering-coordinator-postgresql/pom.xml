@@ -8,20 +8,30 @@
     <artifactId>cluster-libraries</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>clustering-core</artifactId>
-  <properties>
-    <coverage.instruction.minimum>0.86</coverage.instruction.minimum>
-    <coverage.branch.minimum>0.64</coverage.branch.minimum>
-  </properties>
+  <artifactId>clustering-coordinator-postgresql</artifactId>
   <dependencies>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
+      <groupId>com.tsh.toolkit</groupId>
+      <artifactId>clustering-core</artifactId>
+      <version>${project.parent.version}</version>
     </dependency>
     <dependency>
       <groupId>com.tsh.toolkit</groupId>
-      <artifactId>toolkit-core</artifactId>
+      <artifactId>rdbms-core</artifactId>
       <version>${project.parent.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.tsh.toolkit</groupId>
+      <artifactId>codec-json</artifactId>
+      <version>${project.parent.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-database-postgresql</artifactId>
     </dependency>
     <dependency>
       <groupId>com.tsh.toolkit</groupId>
