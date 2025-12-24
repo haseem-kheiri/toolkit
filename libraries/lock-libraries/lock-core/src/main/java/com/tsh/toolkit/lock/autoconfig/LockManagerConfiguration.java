@@ -12,23 +12,23 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND.
  */
 
-package com.tsh.toolkit.rdbms.autoconfig;
+package com.tsh.toolkit.lock.autoconfig;
 
-import org.springframework.boot.autoconfigure.flyway.FlywayMigrationStrategy;
+import com.tsh.toolkit.lock.LockProvider;
+import com.tsh.toolkit.lock.impl.LockManager;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * Disables flyway execution by spring boot.
- *
- * @author Haseem Kheiri
- */
+/** Spring config. */
 @Configuration
-public class FlywayConfiguration {
-  @Bean
-  FlywayMigrationStrategy flywayMigrationStrategy() {
-    return flyway -> {
-      // skip migration
-    };
+public class LockManagerConfiguration {
+
+  @ConditionalOnMissingBean
+  @Bean(destroyMethod = "stop")
+  LockManager lockManager(LockProvider lockProvider) {
+    final LockManager lockManager = new LockManager(lockProvider);
+    lockManager.start();
+    return lockManager;
   }
 }

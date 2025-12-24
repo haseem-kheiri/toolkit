@@ -14,12 +14,7 @@
 
 package com.tsh.toolkit.rdbms;
 
-import com.tsh.toolkit.rdbms.AbstractRdbmsRepository.RdbmsFunction;
-import com.tsh.toolkit.rdbms.AbstractRdbmsRepository.RdbmsInLiteralListConsumer;
-import com.tsh.toolkit.rdbms.AbstractRdbmsRepository.RdbmsParamFunction;
-import com.tsh.toolkit.rdbms.AbstractRdbmsRepository.RdbmsPreparedStatementParamInjector;
-import com.tsh.toolkit.rdbms.AbstractRdbmsRepository.RdbmsResultListprocessor;
-import com.tsh.toolkit.rdbms.AbstractRdbmsRepository.RdbmsSqlStatementSupplier;
+import com.tsh.toolkit.core.utils.Check;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,6 +30,60 @@ import javax.sql.DataSource;
  * @author Haseem Kheiri
  */
 public interface RdbmsRepository {
+
+  /** RDBMS SQL parameter injector. */
+  @FunctionalInterface
+  interface RdbmsPreparedStatementParamInjector {
+    /** Injects parameters in a prepared statement. */
+    void inject(PreparedStatement ps) throws SQLException;
+  }
+
+  /** RDBMS SQL result set processor. */
+  interface RdbmsResultListprocessor<T> {
+    /** Process SQL results. */
+    List<T> processResults(ResultSet rs) throws SQLException;
+  }
+
+  /** SQL statement supplier. */
+  @FunctionalInterface
+  interface RdbmsSqlStatementSupplier<T> {
+    /** Supplies a PreparedStatement. */
+    PreparedStatement get(List<T> subList) throws SQLException;
+  }
+
+  /** RDBMS consumer to add parameters to a PreparedStatment. */
+  @FunctionalInterface
+  interface RdbmsInLiteralListConsumer<P> {
+    /** Add parameters to a PreparedStatement. */
+    void addToInClause(PreparedStatement ps, List<P> params) throws SQLException;
+  }
+
+  /** RDBMS function to add parameters to a PreparedStatment. */
+  @FunctionalInterface
+  interface RdbmsParamFunction<P> {
+    /**
+     * Add parameters to a PreparedStatement.
+     *
+     * @param ps the PreparedStatement
+     * @param param to add
+     * @return true is parameter is added or else false.
+     */
+    boolean addToBatch(PreparedStatement ps, P param) throws SQLException;
+  }
+
+  /** RDBMS consumer. */
+  interface RdbmsConsumer {
+    /** Accepts the connection and run code block on it. */
+    void apply(Connection con) throws SQLException;
+  }
+
+  /** RDBMS function. */
+  @FunctionalInterface
+  interface RdbmsFunction<R> {
+    /** Applies the code block on the RDBMS connection provided. */
+    R apply(Connection con) throws SQLException;
+  }
+
   int PRE_QUERY_REJECTED = -256;
 
   /** Executes the RDBMS code block and returns the result. */
@@ -137,20 +186,37 @@ public interface RdbmsRepository {
         + ") ";
   }
 
-  /** Create sub list based on maxSize. */
-  default <T> List<List<T>> subList(List<T> list, int maxSize) {
-    final List<List<T>> subLists = new ArrayList<>();
-    if (list != null && !list.isEmpty()) {
-      List<T> subList = null;
-      for (int index = 0; index < list.size(); index++) {
-        if (index % maxSize == 0) {
-          subList = new ArrayList<>();
-          subLists.add(subList);
-        }
-        subList.add(list.get(index));
-      }
+  /**
+   * Partitions the given list into sublists of at most {@code maxSize} elements.
+   *
+   * <p>The returned sublists are independent copies and do not share backing storage with the input
+   * list.
+   *
+   * @param list the list to partition; may be null or empty
+   * @param maxSize maximum size of each partition; must be > 0
+   * @return a list of partitions, never null
+   * @throws IllegalArgumentException if maxSize <= 0
+   */
+  default <T> List<List<T>> partition(List<T> list, int maxSize) {
+    Check.requireTrue(maxSize > 0, () -> "maxSize must be greater than zero");
+
+    if (list == null || list.isEmpty()) {
+      return List.of();
     }
-    return subLists;
+
+    final int partitions = (list.size() + maxSize - 1) / maxSize;
+    final List<List<T>> result = new ArrayList<>(partitions);
+
+    List<T> current = null;
+    for (int i = 0; i < list.size(); i++) {
+      if (i % maxSize == 0) {
+        current = new ArrayList<>(maxSize);
+        result.add(current);
+      }
+      current.add(list.get(i));
+    }
+
+    return result;
   }
 
   /**
@@ -172,7 +238,7 @@ public interface RdbmsRepository {
       RdbmsInLiteralListConsumer<T> consumer,
       RdbmsResultListprocessor<R> function)
       throws SQLException {
-    final List<List<T>> subLists = subList(list, maxSize);
+    final List<List<T>> subLists = partition(list, maxSize);
     final List<R> results = new ArrayList<>();
     for (List<T> subList : subLists) {
       try (final PreparedStatement ps = supplier.get(subList)) {

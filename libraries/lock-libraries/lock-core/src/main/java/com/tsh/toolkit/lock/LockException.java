@@ -12,16 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND.
  */
 
-package com.tsh.toolkit.rdbms;
+package com.tsh.toolkit.lock;
 
-/**
- * RDBMS utilities.
- *
- * @author Haseem Kheiri
- */
-public class Rdbms {
-  /** Create a Hikary CP data source factory. */
-  public static HikariCpDatasourceFactory hikariCpDatasourceFactory() {
-    return new HikariCpDatasourceFactory();
+/** Lock exception. */
+@SuppressWarnings("serial")
+public class LockException extends RuntimeException {
+  public LockException(String message, Throwable cause) {
+    super(message, cause);
   }
 }
