@@ -2,19 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.tsh.toolkit</groupId>
-    <artifactId>toolkit</artifactId>
+    <artifactId>libraries</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>libraries</artifactId>
+  <artifactId>cache-libraries</artifactId>
   <packaging>pom</packaging>
   <modules>
-    <module>toolkit-core</module>
-    <module>codec-core-libraries</module>
-    <module>test-core</module>
-    <module>file-core</module>
-    <module>lock-libraries</module>
-    <module>cluster-libraries</module>
-    <module>rdbms-core</module>
-    <module>cache-libraries</module>
+    <module>cache-core</module>
+    <module>cache-invalidation-postgres</module>
   </modules>
 </project>
