@@ -14,11 +14,8 @@
 
 package com.tsh.toolkit.ai.bridge.provider;
 
-import com.tsh.toolkit.ai.bridge.provider.impl.AiRawRequest;
-import com.tsh.toolkit.ai.bridge.provider.impl.AiRawResponse;
+/** A router interface for resolving AI Bridge providers based on a route key. */
+public interface AiBridgeRouter {
 
-/** A marker interface for AI Bridge providers. */
-public interface AiBridgeProvider {
-
-  AiRawResponse generate(AiRawRequest request);
+  AiBridgeProvider resolve(String routeKey);
 }

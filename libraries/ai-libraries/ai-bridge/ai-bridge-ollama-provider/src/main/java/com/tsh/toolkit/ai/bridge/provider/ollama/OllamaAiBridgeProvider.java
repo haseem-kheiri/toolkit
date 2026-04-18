@@ -15,6 +15,15 @@
 package com.tsh.toolkit.ai.bridge.provider.ollama;
 
 import com.tsh.toolkit.ai.bridge.provider.AiBridgeProvider;
+import com.tsh.toolkit.ai.bridge.provider.impl.AiRawRequest;
+import com.tsh.toolkit.ai.bridge.provider.impl.AiRawResponse;
 
 /** AI Bridge provider for Ollama. */
-public class OllamaAiBridgeProvider implements AiBridgeProvider {}
+public class OllamaAiBridgeProvider implements AiBridgeProvider {
+
+  @Override
+  public AiRawResponse generate(AiRawRequest request) {
+    // TODO Auto-generated method stub
+    return null;
+  }
+}

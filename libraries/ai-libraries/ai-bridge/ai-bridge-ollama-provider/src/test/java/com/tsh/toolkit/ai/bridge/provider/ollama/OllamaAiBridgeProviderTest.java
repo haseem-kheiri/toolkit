@@ -27,5 +27,6 @@ class OllamaAiBridgeProviderTest {
   @Test
   void testProviderIsNotNull() {
     Assertions.assertNotNull(provider, "OllamaAiBridgeProvider should be injected by Spring");
+    Assertions.assertNull(provider.generate(null));
   }
 }
