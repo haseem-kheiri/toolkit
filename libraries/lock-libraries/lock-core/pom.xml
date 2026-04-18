@@ -6,14 +6,14 @@
   <parent>
     <groupId>com.tsh.toolkit</groupId>
     <artifactId>lock-libraries</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
   </parent>
   <artifactId>lock-core</artifactId>
   <dependencies>
     <dependency>
       <groupId>com.tsh.toolkit</groupId>
       <artifactId>toolkit-core</artifactId>
-      <version>${project.parent.version}</version>
+      <version>${revision}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>

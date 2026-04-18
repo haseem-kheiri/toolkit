@@ -5,10 +5,9 @@
     <artifactId>libraries</artifactId>
     <version>${revision}</version>
   </parent>
-  <artifactId>cache-libraries</artifactId>
+  <artifactId>ai-libraries</artifactId>
   <packaging>pom</packaging>
   <modules>
-    <module>cache-core</module>
-    <module>cache-invalidation-postgres</module>
+    <module>ai-bridge</module>
   </modules>
 </project>

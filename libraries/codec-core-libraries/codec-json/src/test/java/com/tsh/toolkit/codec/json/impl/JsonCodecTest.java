@@ -65,7 +65,7 @@ class JsonCodecTest {
     String encodedStr = codec.encodeToString(original);
     List<Map<String, Integer>> decodedStr =
         codec.decodeFromString(encodedStr, new ObjectType<List<Map<String, Integer>>>() {});
-    Assertions.assertEquals(original, decoded);
+    Assertions.assertEquals(original, decodedStr);
   }
 
   @Test

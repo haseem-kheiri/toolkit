@@ -6,14 +6,14 @@
   <parent>
     <groupId>com.tsh.toolkit</groupId>
     <artifactId>libraries</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
   </parent>
   <artifactId>rdbms-core</artifactId>
   <dependencies>
     <dependency>
       <groupId>com.tsh.toolkit</groupId>
       <artifactId>toolkit-core</artifactId>
-      <version>${project.parent.version}</version>
+      <version>${revision}</version>
     </dependency>
     <dependency>
       <groupId>com.zaxxer</groupId>
@@ -50,7 +50,7 @@
     <dependency>
       <groupId>com.tsh.toolkit</groupId>
       <artifactId>test-core</artifactId>
-      <version>${project.parent.version}</version>
+      <version>${revision}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

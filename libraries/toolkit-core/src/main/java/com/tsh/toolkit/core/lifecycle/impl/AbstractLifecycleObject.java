@@ -45,7 +45,6 @@ public abstract class AbstractLifecycleObject implements LifecycleObject {
           status = LifecycleObjectStatusType.UP;
         });
     try {
-
       onStart();
     } catch (Exception e) {
       log.warn("Unexpected error in startup.", e);

@@ -6,19 +6,19 @@
   <parent>
     <groupId>com.tsh.toolkit</groupId>
     <artifactId>cache-libraries</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
   </parent>
   <artifactId>cache-invalidation-postgres</artifactId>
   <dependencies>
     <dependency>
       <groupId>com.tsh.toolkit</groupId>
       <artifactId>cache-core</artifactId>
-      <version>${project.parent.version}</version>
+      <version>${revision}</version>
     </dependency>
     <dependency>
       <groupId>com.tsh.toolkit</groupId>
       <artifactId>rdbms-core</artifactId>
-      <version>${project.parent.version}</version>
+      <version>${revision}</version>
     </dependency>
     <dependency>
       <groupId>org.postgresql</groupId>
@@ -31,7 +31,7 @@
     <dependency>
       <groupId>com.tsh.toolkit</groupId>
       <artifactId>test-core</artifactId>
-      <version>${project.parent.version}</version>
+      <version>${revision}</version>
       <scope>test</scope>
     </dependency>
     <dependency>

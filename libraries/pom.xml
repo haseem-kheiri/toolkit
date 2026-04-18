@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.tsh.toolkit</groupId>
     <artifactId>toolkit</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
   </parent>
   <artifactId>libraries</artifactId>
   <packaging>pom</packaging>
@@ -16,5 +16,6 @@
     <module>cluster-libraries</module>
     <module>rdbms-core</module>
     <module>cache-libraries</module>
+    <module>ai-libraries</module>
   </modules>
 </project>

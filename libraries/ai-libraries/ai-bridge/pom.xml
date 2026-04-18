@@ -2,13 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.tsh.toolkit</groupId>
-    <artifactId>libraries</artifactId>
+    <artifactId>ai-libraries</artifactId>
     <version>${revision}</version>
   </parent>
-  <artifactId>cache-libraries</artifactId>
+  <artifactId>ai-bridge</artifactId>
   <packaging>pom</packaging>
   <modules>
-    <module>cache-core</module>
-    <module>cache-invalidation-postgres</module>
+    <module>ai-bridge-ollama-provider</module>
+    <module>ai-bridge-core</module>
   </modules>
 </project>
