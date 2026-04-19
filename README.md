@@ -49,45 +49,75 @@ This toolkit is built around a small number of core principles:
 
 ## Module Overview
 
-The toolkit is organized as a set of focused core libraries.
+The toolkit is organized as a set of focused library modules.
 
 ```text
-toolkit
-├── cluster-core
-├── codec-core
+libraries
+├── ai-libraries
+│   └── ai-bridge
+│       ├── ai-bridge-core
+│       └── ai-bridge-ollama-provider
+├── cache-libraries
+│   ├── cache-core
+│   └── cache-invalidation-postgres
+├── cluster-libraries
+│   ├── clustering-core
+│   └── clustering-coordinator-postgresql
+├── codec-core-libraries
 │   ├── codec-core
 │   ├── codec-json
 │   └── codec-message-pack
 ├── file-core
-├── lock-core
+├── lock-libraries
+│   ├── lock-core
+│   └── lock-provider-postgres
+├── rdbms-core
 ├── test-core
 └── toolkit-core
 ```
 
 ## Module Overview
 
-### cluster-core
+### ai-libraries
+
+AI integration abstractions and provider implementations:
+
+- **ai-bridge-core**: Provider-agnostic AI text generation interface
+- **ai-bridge-ollama-provider**: Ollama backend implementation
+
+Designed for infrastructure applications requiring AI integration.
+
+---
+
+### cache-libraries  
+
+Distributed caching infrastructure with explicit invalidation semantics:
+
+- **cache-core**: Distributed cache invalidation abstractions
+- **cache-invalidation-postgres**: PostgreSQL-backed invalidation bus
+
+Ensures cache coherence across multiple application instances.
+
+---
+
+### cluster-libraries
 
 Application-level cluster coordination primitives:
 
-- Node identity and reincarnation detection  
-- Heartbeats and liveness tracking  
-- Ephemeral and semi-durable coordination state  
-- Repository-backed membership and state  
+- **clustering-core**: Node identity, heartbeats, and membership tracking
+- **clustering-coordinator-postgresql**: PostgreSQL-backed coordination
 
 Used for leaders, schedulers, coordinators, and control-plane logic.
 
 ---
 
-### codec-core
+### codec-core-libraries
 
-A binary-first serialization SPI with enforced generic safety.
+A binary-first serialization SPI with enforced generic safety:
 
-Includes:
-
-- **codec-core**: core abstractions and type-capture utilities  
+- **codec-core**: Core abstractions and type-capture utilities  
 - **codec-json**: Jackson-backed JSON codec  
-- **codec-message-pack**: high-performance MessagePack codec  
+- **codec-message-pack**: High-performance MessagePack codec  
 
 Designed for infrastructure paths, storage engines, and messaging systems.
 
@@ -97,19 +127,32 @@ Designed for infrastructure paths, storage engines, and messaging systems.
 
 File and object-storage abstractions intended for:
 
-- Gateways  
-- Blob access layers  
-- Infrastructure services that require explicit IO semantics  
+- Gateways and blob access layers
+- Infrastructure services requiring explicit IO semantics
+- Cross-platform file system operations
 
 ---
 
-### lock-core
+### lock-libraries
 
-Distributed and local locking primitives designed for:
+Distributed and local locking primitives:
 
-- Coordinators  
-- Schedulers  
-- Ownership and exclusion semantics  
+- **lock-core**: Lease-based exclusive locking abstractions
+- **lock-provider-postgres**: PostgreSQL-backed lock implementation
+
+Designed for coordinators, schedulers, and ownership semantics.
+
+---
+
+### rdbms-core
+
+Relational database utilities and abstractions:
+
+- Connection management and lifecycle
+- Query building and execution helpers
+- Transaction and isolation primitives
+
+Framework-neutral database access layer.
 
 ---
 
@@ -119,17 +162,17 @@ Testing utilities for infrastructure code:
 
 - Deterministic execution helpers  
 - Failure and timing simulation  
-- Test-friendly lifecycle abstractions  
+- Test-friendly lifecycle abstractions
 
 ---
 
 ### toolkit-core
 
-Foundational utilities shared across modules, including:
+Foundational utilities shared across modules:
 
-- Lifecycle primitives  
-- Common exceptions  
-- Shared contracts and internal utilities  
+- Lifecycle primitives and common contracts
+- Shared exceptions and error handling
+- Cross-cutting internal utilities
 
 This module intentionally contains **no domain-specific behavior**.
 
