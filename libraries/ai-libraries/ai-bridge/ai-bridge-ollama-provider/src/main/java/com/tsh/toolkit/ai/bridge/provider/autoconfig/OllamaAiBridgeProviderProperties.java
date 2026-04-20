@@ -12,12 +12,21 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND.
  */
 
-package com.tsh.toolkit.ai.bridge.provider;
+package com.tsh.toolkit.ai.bridge.provider.autoconfig;
 
-import com.tsh.toolkit.ai.bridge.provider.impl.AiRawRequest;
-import com.tsh.toolkit.ai.bridge.provider.impl.AiRawResponse;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
-/** A marker interface for AI Bridge providers. */
-public interface AiBridgeProvider {
-  AiRawResponse generate(AiRawRequest request);
+/**
+ * Configuration properties for the Ollama AI Bridge provider. This class encapsulates the
+ * necessary.
+ */
+@Getter
+@Setter
+public class OllamaAiBridgeProviderProperties {
+  private String model;
+  private List<URI> endpoints = new ArrayList<>();
 }

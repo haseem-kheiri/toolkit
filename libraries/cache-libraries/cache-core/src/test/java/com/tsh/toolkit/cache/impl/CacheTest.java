@@ -18,11 +18,26 @@ import com.tsh.toolkit.cache.Cache;
 import com.tsh.toolkit.core.utils.Threads;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class CacheTest {
-  private CacheManager cacheManager = new CacheManager();
+  private CacheManager cacheManager;
+
+  @BeforeEach
+  void setUp() {
+    cacheManager = new CacheManager();
+    cacheManager.start();
+  }
+
+  @AfterEach
+  void tearDown() {
+    if (cacheManager != null) {
+      cacheManager.stop();
+    }
+  }
 
   @Test
   void testBuildNameNull() {

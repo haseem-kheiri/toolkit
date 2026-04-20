@@ -18,9 +18,16 @@ import com.tsh.toolkit.ai.bridge.provider.autoconfig.OllamaBridgeProviderConfigu
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest(classes = {OllamaBridgeProviderConfiguration.class})
+@SpringBootTest(
+    classes = {OllamaBridgeProviderConfiguration.class},
+    properties = {
+      "ai.bridge.ollama.model=ollama-model",
+      "ai.bridge.ollama.endpoints[0]=http://localhost:11434"
+    })
+@EnableAutoConfiguration
 class OllamaAiBridgeProviderTest {
   @Autowired private OllamaAiBridgeProvider provider;
 

@@ -15,6 +15,8 @@
 package com.tsh.toolkit.ai.bridge.provider.autoconfig;
 
 import com.tsh.toolkit.ai.bridge.provider.ollama.OllamaAiBridgeProvider;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -22,7 +24,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OllamaBridgeProviderConfiguration {
   @Bean
-  OllamaAiBridgeProvider ollamaAiBridgeProvider() {
-    return new OllamaAiBridgeProvider();
+  @ConditionalOnMissingBean
+  @ConfigurationProperties(prefix = "ai.bridge.ollama")
+  OllamaAiBridgeProviderProperties ollamaAiBridgeProviderProperties() {
+    return new OllamaAiBridgeProviderProperties();
+  }
+
+  @Bean
+  OllamaAiBridgeProvider ollamaAiBridgeProvider(OllamaAiBridgeProviderProperties properties) {
+    return new OllamaAiBridgeProvider(properties);
   }
 }

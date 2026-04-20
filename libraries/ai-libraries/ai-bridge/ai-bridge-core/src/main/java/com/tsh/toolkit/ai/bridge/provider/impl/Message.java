@@ -14,6 +14,9 @@
 
 package com.tsh.toolkit.ai.bridge.provider.impl;
 
+import com.tsh.toolkit.core.utils.Check;
+import lombok.Getter;
+
 /**
  * Represents a single message in a conversation with an AI language model (LLM).
  *
@@ -72,6 +75,7 @@ package com.tsh.toolkit.ai.bridge.provider.impl;
  * @author Haseem Kheiri
  * @see Role
  */
+@Getter
 public final class Message {
 
   /** The role that defines the context and purpose of this message. */
@@ -83,37 +87,15 @@ public final class Message {
   /**
    * Constructs a new Message with the specified role and content.
    *
-   * <p>Use the predefined role instances ({@link Role#SYSTEM}, {@link Role#USER}, 
-   * {@link Role#ASSISTANT}) to ensure compatibility with standard AI APIs.
+   * <p>Use the predefined role instances ({@link Role#SYSTEM}, {@link Role#USER}, {@link
+   * Role#ASSISTANT}) to ensure compatibility with standard AI APIs.
    *
    * @param role the role object that defines the context and purpose of this message
    * @param content the actual text content of the message
-   * @throws NullPointerException if role or content is null
+   * @throws IllegalArgumentException if role or content is null
    */
   public Message(Role role, String content) {
-    this.role = role;
-    this.content = content;
-  }
-
-  /**
-   * Returns the role object of this message.
-   *
-   * <p>The returned Role object will be one of the predefined instances
-   * ({@link Role#SYSTEM}, {@link Role#USER}, {@link Role#ASSISTANT}) or a custom
-   * Role instance if one was provided during construction.
-   *
-   * @return the Role object that defines the context and purpose of this message
-   */
-  public Role getRole() {
-    return role;
-  }
-
-  /**
-   * Returns the content of this message.
-   *
-   * @return the actual text content of this message
-   */
-  public String getContent() {
-    return content;
+    this.role = Check.requireNotNull(role, () -> "Role cannot be null");
+    this.content = Check.requireNotBlank(content, () -> "Content cannot be null or blank");
   }
 }

@@ -34,6 +34,23 @@ public interface AiBridgeProvider {
 }
 ```
 
+#### `AbstractRoundRobinEndpointSelector`
+
+Base class providing thread-safe round-robin endpoint selection:
+
+```java
+public abstract class AbstractRoundRobinEndpointSelector implements EndpointSelector {
+  protected AbstractRoundRobinEndpointSelector(List<URI> endpoints);
+  public final URI select(); // Thread-safe round-robin implementation
+}
+```
+
+Features:
+- **Thread-safe**: Uses synchronized blocks for concurrent access
+- **Fair distribution**: Ensures all endpoints receive equal load over time  
+- **Overflow handling**: Gracefully handles integer counter overflow
+- **Reusable**: Can be extended by any provider needing round-robin selection
+
 #### `AiRawRequest`
 
 Structured request containing:
@@ -52,7 +69,21 @@ Structured response containing:
 
 ## ai-bridge-ollama-provider
 
-**Ollama backend implementation** (currently in development).
+**Ollama backend implementation** that extends the round-robin endpoint selection base class.
+
+### Current Implementation
+
+- **OllamaEndpointSelector**: Extends `AbstractRoundRobinEndpointSelector` for fair load distribution
+- **Provider stub**: Core provider interface defined but HTTP integration pending
+
+### Architecture
+
+```java
+OllamaEndpointSelector extends AbstractRoundRobinEndpointSelector
+                        implements EndpointSelector
+```
+
+The selector inherits thread-safe round-robin logic from the base class, allowing multiple Ollama instances to be used without custom load balancing code.
 
 ### Planned Features
 
@@ -61,24 +92,23 @@ Structured response containing:
 - Configurable connection settings
 - Spring Boot auto-configuration support
 
-### Current Status
-
-The Ollama provider is currently a stub implementation. The core interface is defined but the actual Ollama integration is not yet complete.
+### Usage Example
 
 ```java
-// Planned usage (not yet implemented)
-@Autowired
-private OllamaAiBridgeProvider provider;
+// Multiple Ollama instances for high availability
+List<URI> ollamaEndpoints = List.of(
+    URI.create("http://ollama1:11434"),
+    URI.create("http://ollama2:11434"),
+    URI.create("http://ollama3:11434")
+);
 
-AiRawRequest request = AiRawRequest.builder()
-    .addMessage(Message.user("Explain distributed systems"))
-    .withConfig(GenerationConfig.builder()
-        .model("llama2")
-        .maxTokens(500)
-        .build())
-    .build();
+OllamaEndpointSelector selector = new OllamaEndpointSelector(ollamaEndpoints);
 
-AiRawResponse response = provider.generate(request);
+// Each call rotates through endpoints fairly
+URI endpoint1 = selector.select(); // http://ollama1:11434
+URI endpoint2 = selector.select(); // http://ollama2:11434  
+URI endpoint3 = selector.select(); // http://ollama3:11434
+URI endpoint4 = selector.select(); // http://ollama1:11434 (wrap around)
 ```
 
 ---

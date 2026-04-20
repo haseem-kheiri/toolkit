@@ -6,4 +6,12 @@
     <version>${revision}</version>
   </parent>
   <artifactId>ai-bridge-core</artifactId>
+  
+  <dependencies>
+    <dependency>
+      <groupId>com.tsh.toolkit</groupId>
+      <artifactId>toolkit-core</artifactId>
+      <version>${revision}</version>
+    </dependency>
+  </dependencies>
 </project>

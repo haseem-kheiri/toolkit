@@ -14,7 +14,9 @@
 
 package com.tsh.toolkit.ai.bridge.provider.impl;
 
+import com.tsh.toolkit.core.utils.Check;
 import java.util.List;
+import lombok.Getter;
 
 /**
  * Represents a raw request to an AI language model, encapsulating the complete payload needed to
@@ -87,6 +89,7 @@ import java.util.List;
  * @see Role
  * @see GenerationConfig
  */
+@Getter
 public final class AiRawRequest {
 
   /**
@@ -118,59 +121,11 @@ public final class AiRawRequest {
    * @param messages the structured conversation messages (system, user, assistant); cannot be null
    * @param config the generation configuration parameters controlling AI behavior; cannot be null
    * @param model the provider-specific model identifier (e.g., "mistral:7b", "gpt-4"); may be null
-   * @throws NullPointerException if messages or config is null
+   * @throws IllegalArgumentException if messages or config is null
    */
   public AiRawRequest(List<Message> messages, GenerationConfig config, String model) {
-    this.messages = messages;
-    this.config = config;
+    this.messages = Check.requireNotEmpty(messages, () -> "Messages list cannot be null or empty");
+    this.config = Check.requireNotNull(config, () -> "GenerationConfig cannot be null");
     this.model = model;
-  }
-
-  /**
-   * Returns the conversation messages for this AI request.
-   *
-   * <p>The messages list contains the structured conversation history including system
-   * instructions, user inputs, and any previous assistant responses that provide context for the AI
-   * model.
-   *
-   * @return an immutable view of the conversation messages; never null
-   */
-  public List<Message> getMessages() {
-    return messages;
-  }
-
-  /**
-   * Returns the generation configuration for this AI request.
-   *
-   * <p>The configuration contains parameters that control AI behavior such as:
-   *
-   * <ul>
-   *   <li>Temperature (0.0-1.0): Controls randomness and creativity
-   *   <li>Top-P (0.0-1.0): Controls diversity of token selection
-   *   <li>Max Tokens: Limits the length of the response
-   * </ul>
-   *
-   * @return the generation configuration parameters; never null
-   */
-  public GenerationConfig getConfig() {
-    return config;
-  }
-
-  /**
-   * Returns the provider-specific model identifier for this AI request.
-   *
-   * <p>The model identifier allows targeting specific AI models within a provider's catalog.
-   * Examples include:
-   *
-   * <ul>
-   *   <li>OpenAI: "gpt-4", "gpt-3.5-turbo"
-   *   <li>Ollama: "mistral:7b", "llama2:13b"
-   *   <li>Anthropic: "claude-3-sonnet", "claude-3-haiku"
-   * </ul>
-   *
-   * @return the model identifier, or null if not specified
-   */
-  public String getModel() {
-    return model;
   }
 }

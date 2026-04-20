@@ -14,10 +14,13 @@
 
 package com.tsh.toolkit.ai.bridge.provider;
 
-import com.tsh.toolkit.ai.bridge.provider.impl.AiRawRequest;
-import com.tsh.toolkit.ai.bridge.provider.impl.AiRawResponse;
+import java.net.URI;
 
-/** A marker interface for AI Bridge providers. */
-public interface AiBridgeProvider {
-  AiRawResponse generate(AiRawRequest request);
+/**
+ * An interface for selecting an endpoint URI from a list of available endpoints. This is used by AI
+ * Bridge providers to determine which endpoint to send requests to, enabling load balancing and
+ * failover strategies.
+ */
+public interface EndpointSelector {
+  URI select();
 }

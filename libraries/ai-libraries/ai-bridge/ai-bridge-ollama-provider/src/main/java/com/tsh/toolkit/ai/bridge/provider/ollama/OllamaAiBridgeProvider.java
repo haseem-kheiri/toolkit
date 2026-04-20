@@ -15,15 +15,27 @@
 package com.tsh.toolkit.ai.bridge.provider.ollama;
 
 import com.tsh.toolkit.ai.bridge.provider.AiBridgeProvider;
+import com.tsh.toolkit.ai.bridge.provider.EndpointSelector;
+import com.tsh.toolkit.ai.bridge.provider.autoconfig.OllamaAiBridgeProviderProperties;
 import com.tsh.toolkit.ai.bridge.provider.impl.AiRawRequest;
 import com.tsh.toolkit.ai.bridge.provider.impl.AiRawResponse;
+import com.tsh.toolkit.core.utils.Check;
+import java.net.URI;
+import org.springframework.web.reactive.function.client.WebClient;
 
 /** AI Bridge provider for Ollama. */
 public class OllamaAiBridgeProvider implements AiBridgeProvider {
+  private final WebClient webClient = WebClient.builder().build();
+  private final EndpointSelector endpointSelector;
+
+  public OllamaAiBridgeProvider(OllamaAiBridgeProviderProperties properties) {
+    Check.requireNotNull(properties, () -> "OllamaAiBridgeProviderProperties must not be null");
+    this.endpointSelector = new OllamaEndpointSelector(properties.getEndpoints());
+  }
 
   @Override
   public AiRawResponse generate(AiRawRequest request) {
-    // TODO Auto-generated method stub
+    URI endpoint = endpointSelector.select();
     return null;
   }
 }

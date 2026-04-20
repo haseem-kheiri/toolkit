@@ -14,6 +14,8 @@
 
 package com.tsh.toolkit.ai.bridge.provider.impl;
 
+import lombok.Getter;
+
 /**
  * Configuration parameters that control AI language model text generation behavior.
  *
@@ -74,6 +76,7 @@ package com.tsh.toolkit.ai.bridge.provider.impl;
  *
  * @see AiRawRequest
  */
+@Getter
 public final class GenerationConfig {
 
   /**
@@ -144,64 +147,5 @@ public final class GenerationConfig {
     this.temperature = temperature;
     this.topP = topP;
     this.maxTokens = maxTokens;
-  }
-
-  /**
-   * Returns the temperature parameter that controls randomness and creativity.
-   *
-   * <p>The temperature parameter influences the model's token selection process:
-   *
-   * <ul>
-   *   <li><strong>0.0:</strong> Deterministic output (always selects most probable token)
-   *   <li><strong>0.1-0.3:</strong> Very focused, factual responses
-   *   <li><strong>0.4-0.7:</strong> Balanced creativity and coherence
-   *   <li><strong>0.8-1.0:</strong> More creative and varied responses
-   *   <li><strong>1.0+:</strong> Highly creative but potentially inconsistent
-   * </ul>
-   *
-   * @return the temperature value (0.0-2.0), or null if provider default should be used
-   */
-  public Double getTemperature() {
-    return temperature;
-  }
-
-  /**
-   * Returns the top-P parameter that controls diversity through nucleus sampling.
-   *
-   * <p>The top-P (nucleus sampling) parameter limits token selection to the most probable
-   * candidates that comprise the specified percentage of the cumulative probability mass:
-   *
-   * <ul>
-   *   <li><strong>0.1:</strong> Very focused (top 10% of probability mass)
-   *   <li><strong>0.5:</strong> Moderately focused (top 50% of probability mass)
-   *   <li><strong>0.9:</strong> Diverse but coherent (top 90% of probability mass)
-   *   <li><strong>1.0:</strong> Full vocabulary available (no filtering)
-   * </ul>
-   *
-   * @return the top-P value (0.0-1.0), or null if provider default should be used
-   */
-  public Double getTopP() {
-    return topP;
-  }
-
-  /**
-   * Returns the maximum number of tokens the model should generate.
-   *
-   * <p>This parameter controls the maximum length of the AI response and can help:
-   *
-   * <ul>
-   *   <li>Prevent overly verbose responses
-   *   <li>Control API costs (many providers charge per token)
-   *   <li>Ensure responses fit within application constraints
-   *   <li>Maintain consistent response lengths across requests
-   * </ul>
-   *
-   * <p><strong>Note:</strong> The actual response may be shorter if the model naturally concludes
-   * its response before reaching this limit.
-   *
-   * @return the maximum token count (1+), or null if provider default should be used
-   */
-  public Integer getMaxTokens() {
-    return maxTokens;
   }
 }
